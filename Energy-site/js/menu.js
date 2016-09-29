@@ -1,0 +1,9 @@
+$(document).ready(function(){
+    $(".menu").hide();
+    $(".menu-btn").click(function(){
+        $('.menu').slideDown(400);
+        $(".close-btn").click(function(){
+            $(".menu").slideUp(400);
+        });
+    });
+});
