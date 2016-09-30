@@ -21,9 +21,6 @@ header{
     z-index: 10;
 }
 
-.col-xs-6{
-    
-}
 
 .logo{
     overflow: hidden;
@@ -186,3 +183,18 @@ header .menu-btn{
   transform: scale(1.05);
 }
 
+/*content 2*/
+.content-2{
+    background-color: #373737;
+    position: relative;
+    padding: 30px 0;
+}
+
+.video-grid{
+    padding: 40px 0;
+}
+
+#video-container-1,
+#video-container-2{
+    margin: 10px 0;
+}
