@@ -1,0 +1,252 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+h1{
+    font-family: 'antonregular';
+    text-transform: uppercase;
+}
+
+/**HEADER**/
+
+header{
+    background-color: black;
+    position: fixed;    
+    width: 100%;
+    z-index: 10;
+}
+
+
+.logo{
+    overflow: hidden;
+}
+.logo img{
+    width: 200px;
+}
+
+header .login-btn,
+header .menu-btn{
+    color: greenyellow;
+    margin-top: 14px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+
+/**MENU**/
+.menu{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding: 10px 0 6px 0;
+    background-color: #B0FF00;
+}
+
+.menu a{
+    color: rgba(33, 33, 33, 0.6);
+    font-family: 'antonregular';
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+
+.menu .nav-selected a{
+    color: black;
+    text-decoration: underline;
+}
+
+.menu .nav-option a:hover{
+    color: black;
+    transition: 0.4s;
+}
+
+.menu .close-btn{
+    font-size: 1.5em;
+    padding: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.menu li{
+    padding: 5px 0 4px 0;
+}
+
+/**MAIN**/
+
+#main .full-main{
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
+}
+
+.full-main img,
+.full-main figcaption{
+    width: 100%;
+}
+
+.full-main figcaption{
+    position: absolute;
+    background-color: rgba(0,0,0,0.3);
+    color: #B0FF00;
+    height: auto;
+    top: 0;
+    padding: 300px 0;
+    text-align: center;
+    z-index: 5;
+}
+
+.full-main h1{
+    font-size: 4em;
+}
+
+.full-main .main-w{
+    font-size: inherit;
+    color: white;
+}
+
+.full-main .main-bajada{
+    color: white;
+    font-family: 'poppinslight';
+    padding: 20px 0 0 0;
+    font-size: 1.5em;
+}
+
+.full-main .social,
+.rs-grid{
+    padding: 40px 0 10px 0;
+}
+
+.full-main .social li a,
+.rs-grid li a{
+    padding: 5px 10px;
+    font-size: 2em;
+    color: #B0FF00;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+}
+
+.full-main .social li a:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5)
+}
+
+.full-main img{
+  -webkit-transition: 2s ease;
+  transition: 2s ease;
+}
+
+#main:hover .full-main img {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+
+/**CONTENT**/
+
+.content-1{
+    background-color: #3D3D3D;
+    position: relative;
+    padding: 30px 0;
+}
+
+.content-title{
+    color: #B0FF00;
+}
+
+.qn-icons{
+    padding: 50px 0 30px 0;
+}
+
+.qn-title{
+    font-family: 'poppinslight';
+    color: white;
+    font-size: 1.2em;
+}
+
+.qn-icon{
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.qn-icon img{
+    width: 80%;
+    -webkit-transition: 0.2s ease;
+    transition: 0.2s ease;
+}
+
+.qn-icon img:hover{
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+/*content 2*/
+.content-2{
+    background-color: #373737;
+    position: relative;
+    padding: 30px 0;
+}
+
+.video-grid{
+    padding: 40px 0;
+}
+
+#video-container-1,
+#video-container-2{
+    margin: 10px 0;
+}
+
+
+/**convenios**/
+.content-3{
+    background-color: #2C2C2C;
+    position: relative;
+}
+
+.convenios-grid{
+    padding: 20px 0;;
+}
+
+.convenio img{
+    width: 100%;
+}
+
+/**subfooter**/
+.subfooter{
+    position: relative;
+    background-color: #212121;
+    border-bottom: 1px solid rgba(65, 65, 65, 0.48);
+}
+
+.rs-grid li a{
+    font-size: 2.5em;
+    color: rgba(176, 255, 0, 0.8);
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+}
+
+.rs-grid li a:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    color: #b0ff00;
+}
+
+/**footer**/
+footer{
+    position: relative;
+    background-color: #212121;
+    padding: 20px 0;
+}
+
+footer .copyright{
+    color: white;
+    font-family: 'poppinslight';
+    font-weight: 100;
+    font-size: 0.8em;
+    padding-top: 10px;
+}
