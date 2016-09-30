@@ -117,11 +117,13 @@ header .menu-btn{
     font-size: 1.5em;
 }
 
-.full-main .social{
+.full-main .social,
+.rs-grid{
     padding: 40px 0 10px 0;
 }
 
-.full-main .social li a{
+.full-main .social li a,
+.rs-grid li a{
     padding: 5px 10px;
     font-size: 2em;
     color: #B0FF00;
@@ -197,4 +199,54 @@ header .menu-btn{
 #video-container-1,
 #video-container-2{
     margin: 10px 0;
+}
+
+
+/**convenios**/
+.content-3{
+    background-color: #2C2C2C;
+    position: relative;
+}
+
+.convenios-grid{
+    padding: 20px 0;;
+}
+
+.convenio img{
+    width: 100%;
+}
+
+/**subfooter**/
+.subfooter{
+    position: relative;
+    background-color: #212121;
+    border-bottom: 1px solid rgba(65, 65, 65, 0.48);
+}
+
+.rs-grid li a{
+    font-size: 2.5em;
+    color: rgba(176, 255, 0, 0.8);
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+}
+
+.rs-grid li a:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    color: #b0ff00;
+}
+
+/**footer**/
+footer{
+    position: relative;
+    background-color: #212121;
+    padding: 20px 0;
+}
+
+footer .copyright{
+    color: white;
+    font-family: 'poppinslight';
+    font-weight: 100;
+    font-size: 0.8em;
+    padding-top: 10px;
 }
