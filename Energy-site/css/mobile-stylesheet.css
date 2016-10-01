@@ -45,4 +45,12 @@
     header{
         background-color: yellow;
     }
+    
+    .iconteractive .benef{
+        padding: 5px 0;
+    }
+    
+    .iconteractive .par-icon{
+        padding: 5px 0;
+    }
 } 

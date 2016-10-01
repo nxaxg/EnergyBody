@@ -15,10 +15,11 @@ h1{
 /**HEADER**/
 
 header{
-    background-color: black;
+    background-color: #212121;
     position: fixed;    
     width: 100%;
     z-index: 10;
+    height: 70px;
 }
 
 
@@ -85,7 +86,6 @@ header .menu-btn{
     position: relative;
 }
 
-.full-main img,
 .full-main figcaption{
     width: 100%;
 }
@@ -117,11 +117,13 @@ header .menu-btn{
     font-size: 1.5em;
 }
 
-.full-main .social{
+.full-main .social,
+.rs-grid{
     padding: 40px 0 10px 0;
 }
 
-.full-main .social li a{
+.full-main .social li a,
+.rs-grid li a{
     padding: 5px 10px;
     font-size: 2em;
     color: #B0FF00;
@@ -134,14 +136,36 @@ header .menu-btn{
     transform: scale(1.5)
 }
 
-.full-main img{
+.full-main{
   -webkit-transition: 2s ease;
   transition: 2s ease;
 }
 
-#main:hover .full-main img {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
+
+/*bg-img*/
+.wrap{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    -moz-transition: all 5s;
+    -webkit-transition: all 5s;
+    transition: all 5s;
+    background-image: url(../img/main-photo-big.jpg);
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+#main:hover .wrap{
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-filter: opacity(90%);
+    filter: opacity(90%);
 }
 
 
@@ -151,6 +175,7 @@ header .menu-btn{
     background-color: #3D3D3D;
     position: relative;
     padding: 30px 0;
+    overflow: hidden;
 }
 
 .content-title{
@@ -197,4 +222,118 @@ header .menu-btn{
 #video-container-1,
 #video-container-2{
     margin: 10px 0;
+}
+
+
+/**convenios**/
+.content-3{
+    background-color: #2C2C2C;
+    position: relative;
+    padding: 30px 0;
+}
+
+.convenios-grid{
+    padding: 20px 0;;
+}
+
+.convenio img{
+    width: 100%;
+}
+
+
+
+/**INTERIOR**/
+
+.main-int{
+    position: relative;
+    padding-top: 90px;
+    padding-bottom: 25px;
+    background-color: #212121;
+}
+
+.main-title{
+    font-size: 3em;
+    color: #CCFF40;
+}
+
+/*slider*/
+.slider-group, .slider{
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-group{
+    padding: 30px 0;
+}
+
+.slider-group img{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.slider-group .qn-title{
+    color: #D8FF5A;
+    font-size: 1.4em;
+}
+
+.slider-group .par-icon{
+    color: white;
+    font-family: 'poppinslight';
+    padding: 10px 0;
+}
+
+
+/**interactivecons**/
+
+.iconteractive{
+    padding: 30px 0;
+}
+
+.iconteractive figure{
+    overflow: hidden;
+}
+.iconteractive img{
+    width: 80%;
+}
+
+.iconteractive .par-icon{
+    padding: 40px 0;
+    color: white;
+}
+
+/**subfooter**/
+.subfooter{
+    position: relative;
+    background-color: #212121;
+    border-bottom: 1px solid rgba(65, 65, 65, 0.48);
+    padding: 0;
+}
+
+.rs-grid li a{
+    font-size: 2.5em;
+    color: rgba(176, 255, 0, 0.8);
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+    padding: 0;
+}
+
+.rs-grid li a:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    color: #b0ff00;
+}
+
+/**footer**/
+footer{
+    position: relative;
+    background-color: #212121;
+    padding: 20px 0;
+}
+
+footer .copyright{
+    color: white;
+    font-family: 'poppinslight';
+    font-weight: 100;
+    font-size: 0.8em;
+    padding-top: 10px;
 }
