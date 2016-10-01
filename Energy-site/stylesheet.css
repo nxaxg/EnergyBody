@@ -15,11 +15,10 @@ h1{
 /**HEADER**/
 
 header{
-    background-color: #212121;
+    background-color: black;
     position: fixed;    
     width: 100%;
     z-index: 10;
-    height: 70px;
 }
 
 
@@ -86,6 +85,7 @@ header .menu-btn{
     position: relative;
 }
 
+.full-main img,
 .full-main figcaption{
     width: 100%;
 }
@@ -136,36 +136,14 @@ header .menu-btn{
     transform: scale(1.5)
 }
 
-.full-main{
+.full-main img{
   -webkit-transition: 2s ease;
   transition: 2s ease;
 }
 
-
-/*bg-img*/
-.wrap{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    -moz-transition: all 5s;
-    -webkit-transition: all 5s;
-    transition: all 5s;
-    background-image: url(../img/main-photo-big.jpg);
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    z-index: -1;
-}
-
-#main:hover .wrap{
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-    -webkit-filter: opacity(90%);
-    filter: opacity(90%);
+#main:hover .full-main img {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 
@@ -175,7 +153,6 @@ header .menu-btn{
     background-color: #3D3D3D;
     position: relative;
     padding: 30px 0;
-    overflow: hidden;
 }
 
 .content-title{
@@ -229,10 +206,6 @@ header .menu-btn{
 .content-3{
     background-color: #2C2C2C;
     position: relative;
-<<<<<<< HEAD
-    padding: 30px 0;
-=======
->>>>>>> origin/master
 }
 
 .convenios-grid{
@@ -243,79 +216,11 @@ header .menu-btn{
     width: 100%;
 }
 
-<<<<<<< HEAD
-
-
-/**INTERIOR**/
-
-.main-int{
-    position: relative;
-    padding-top: 90px;
-    padding-bottom: 25px;
-    background-color: #212121;
-}
-
-.main-title{
-    font-size: 3em;
-    color: #CCFF40;
-}
-
-/*slider*/
-.slider-group, .slider{
-    position: relative;
-    overflow: hidden;
-}
-
-.slider-group{
-    padding: 30px 0;
-}
-
-.slider-group img{
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.slider-group .qn-title{
-    color: #D8FF5A;
-    font-size: 1.4em;
-}
-
-.slider-group .par-icon{
-    color: white;
-    font-family: 'poppinslight';
-    padding: 10px 0;
-}
-
-
-/**interactivecons**/
-
-.iconteractive{
-    padding: 30px 0;
-}
-
-.iconteractive figure{
-    overflow: hidden;
-}
-.iconteractive img{
-    width: 80%;
-}
-
-.iconteractive .par-icon{
-    padding: 40px 0;
-    color: white;
-}
-
-=======
->>>>>>> origin/master
 /**subfooter**/
 .subfooter{
     position: relative;
     background-color: #212121;
     border-bottom: 1px solid rgba(65, 65, 65, 0.48);
-<<<<<<< HEAD
-    padding: 0;
-=======
->>>>>>> origin/master
 }
 
 .rs-grid li a{
@@ -323,10 +228,6 @@ header .menu-btn{
     color: rgba(176, 255, 0, 0.8);
     -webkit-transition: 0.4s ease;
     transition: 0.4s ease;
-<<<<<<< HEAD
-    padding: 0;
-=======
->>>>>>> origin/master
 }
 
 .rs-grid li a:hover{
