@@ -332,11 +332,6 @@ header .menu-btn{
     position: relative;
     margin: 20px 0;
     cursor: pointer;
-     -moz-transition: all .3s linear;
-     -webkit-transition: all .3s linear;
-     -ms-transition: all .3s linear;
-     -o-transition: all .3s linear;
-     transition: all .3s linear;
 }
 
 .planes-cont{
@@ -386,8 +381,8 @@ header .menu-btn{
 }
 
 .plan:hover .plan-overlay{
-    transition: 0.4s;
     visibility: visible;
+    transition: 0.5s;
 }
 
 .plan-overlay span{
@@ -496,6 +491,7 @@ header .menu-btn{
 #fullback .back-title{
     color: #CCFF40;
     padding: 20px 0 40px 0;
+    font-size: 2.5em;
 }
 
 #fullback .back-contact{
@@ -507,6 +503,11 @@ header .menu-btn{
     border: 4px solid #CCFF40;
 }
 
+#fullback .back-contact:hover{
+    background-color: rgba(0,0,0,0.8);
+    transition: 0.5s;
+}
+
 #fullback.franquicia-back{
     background: url(../img/fb-franquicia.jpg);
     background-position: left;
@@ -514,6 +515,23 @@ header .menu-btn{
     background-size: cover;
     background-attachment: fixed;
 }
+
+/**quienes somos**/
+
+.mision-vision{
+    font-family: 'poppinslight';
+    color: white;
+    padding: 20px 0;
+}
+
+#fullback.quienessomos-back{
+    background: url(../img/fb-quienessomos.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 /**subfooter**/
 .subfooter{
     position: relative;
