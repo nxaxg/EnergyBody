@@ -38,11 +38,29 @@ header .menu-btn{
     cursor: pointer;
 }
 
+.login-btn,
+.close-btn,
+.menu-btn,
+.nav-option{
+    -webkit-transition: 0.2s ease-in;
+    transition: 0.2s ease-in;
+    padding: 5px 0;
+}
+
+.close-btn:hover,
+.login-btn:hover,
+.menu-btn:hover,
+.nav-option:hover{
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
+}
+
 
 /**MENU**/
 .menu{
     position: absolute;
     width: 100%;
+    height: 70px;
     top: 0;
     padding: 10px 0 6px 0;
     background-color: #B0FF00;
@@ -74,7 +92,11 @@ header .menu-btn{
 }
 
 .menu li{
-    padding: 5px 0 4px 0;
+    padding: 10px 0 6px 0;
+}
+
+.menu .close-btn{
+    padding: 5px 0;
 }
 
 /**MAIN**/
@@ -417,6 +439,81 @@ header .menu-btn{
     padding: 80px 0;
 }
 
+/**content destacado**/
+.content-dest{
+    padding: 40px 0;
+    position: relative;
+    background: #D8FF5A;
+}
+
+.par-dest-1{
+    margin-bottom: 0;
+    font-weight: bolder;
+    font-size: 1.2em;
+    font-family: 'poppinsmedium';
+}
+
+.par-dest-2{
+    margin-top: 0;
+    font-size: 1.2em;
+    font-weight: 200;
+    font-family: 'poppinslight';
+}
+
+.divider{
+    border: 0;
+    height: 5px;
+    background: #333;
+    left: 15px;
+}
+
+/**testimonios**/
+.slider-testimonio{
+    padding: 40px 0;
+    color: white;
+}
+
+.par-testimonio{
+    padding: 20px 10px;
+    font-size: 1.1em;
+}
+
+.par-autor{
+    padding: 10px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 200;
+}
+
+.par-autor span{
+    font-weight: bold;
+}
+
+/**full image back**/
+#fullback{
+    padding: 40px 0;
+}
+
+#fullback .back-title{
+    color: #CCFF40;
+    padding: 20px 0 40px 0;
+}
+
+#fullback .back-contact{
+    color: #CCFF40;
+    margin-top: 40px;
+    padding: 10px;
+    font-size: 1.8em;
+    font-family: 'poppinsmedium';
+    border: 4px solid #CCFF40;
+}
+
+#fullback.franquicia-back{
+    background: url(../img/fb-franquicia.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 /**subfooter**/
 .subfooter{
     position: relative;
