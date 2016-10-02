@@ -262,7 +262,8 @@ header .menu-btn{
     overflow: hidden;
 }
 
-.slider-group{
+.slider-group,
+.slider-group-sucursal{
     padding: 30px 0;
 }
 
@@ -271,12 +272,14 @@ header .menu-btn{
     margin-left: auto;
 }
 
-.slider-group .qn-title{
+.slider-group .qn-title,
+.slider-group-sucursal .qn-title{
     color: #D8FF5A;
     font-size: 1.4em;
 }
 
-.slider-group .par-icon{
+.slider-group .par-icon,
+.slider-group-sucursal .par-icon{
     color: white;
     font-family: 'poppinslight';
     padding: 10px 0;
@@ -299,6 +302,119 @@ header .menu-btn{
 .iconteractive .par-icon{
     padding: 40px 0;
     color: white;
+}
+
+
+/*planes*/
+.plan{
+    position: relative;
+    margin: 20px 0;
+    cursor: pointer;
+     -moz-transition: all .3s linear;
+     -webkit-transition: all .3s linear;
+     -ms-transition: all .3s linear;
+     -o-transition: all .3s linear;
+     transition: all .3s linear;
+}
+
+.planes-cont{
+    padding: 30px 0;
+    overflow: hidden;
+    margin:0;
+}
+
+.plan-title{
+    font-family: 'antonregular';
+    text-transform: uppercase;
+    font-size: 1.5em;
+    padding: 5px 0;
+    background-color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin:0;
+}
+
+.plan-valor{
+    font-family: 'antonregular';
+    text-transform: uppercase;
+    font-size: 1.5em;
+    padding: 5px 0;
+    background-color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 0;
+}
+
+.plan-desc{
+    margin: 0;
+    padding: 20px 0;
+    background-color: dimgray;
+}
+
+.plan-overlay{
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    padding: 60px 0;
+    position: absolute;
+    bottom: 0;
+    width: 94%;
+    height: 100%;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.plan:hover .plan-overlay{
+    transition: 0.4s;
+    visibility: visible;
+}
+
+.plan-overlay span{
+    font-size: 2em;
+    color: #CCFF40;
+}
+
+.plan-overlay p{
+    font-size: 1.4em;
+    font-family: 'antonregular';
+    text-transform: uppercase;
+    color: #CCFF40;
+}
+
+.plan-detalles{
+    overflow: hidden;
+    padding: 20px 20px 10px 20px;
+    background-color: rgba(105, 105, 105, 0.3);
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 200;
+}
+
+.plan-detalles ul li{
+    font-size: 0.95em;
+}
+
+.slider.sucursal:first-child{
+    background: url(../img/sucursal1.jpg);
+    background-position: center, bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.slider.sucursal:nth-child(2){
+    background: url(../img/sucursal2.jpg);
+    background-position: center, bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.slider.sucursal:nth-child(3){
+    background: url(../img/sucursal3.jpg);
+    background-position: center, bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.slider.sucursal figure{
+    padding: 80px 0;
 }
 
 /**subfooter**/
