@@ -12,6 +12,10 @@ h1{
     text-transform: uppercase;
 }
 
+textarea{
+    resize: none;
+}
+
 /**HEADER**/
 
 header{
@@ -530,6 +534,58 @@ header .menu-btn{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+}
+
+/*contacto*/
+.par-icon-cont{
+    padding: 10px 0 20px 0;
+    font-family: 'poppinslight';
+    color: #D8FF5A;
+}
+
+form .form-group input,
+form .form-group textarea{
+    border-radius: 0px;
+    font-family: 'poppinslight';
+    font-size: 1em;
+    background-color: rgba(255,255,255,0.8);
+}
+
+form .form-group{
+    background-color: transparent;
+}
+
+form .form-group input:focus,
+form .form-group textarea:focus{
+    outline: 1px solid #D8FF5A;
+    background-color: white;
+    transition: 0.5s;
+}
+
+.btn-box .btn{
+    border-radius: 0;
+    padding: 10px 0;
+    background-color: #D8FF5A;
+    border: 2px solid #D8FF5A;
+    color: black;
+    font-family: 'antonregular';
+    font-size: 1.8em;
+    text-transform: uppercase;
+}
+
+.btn-box .btn:hover{
+    background-color: transparent;
+    border: 2px solid #D8FF5A;
+    color: #D8FF5A;
+    transition: 0.4s;
+}
+
+.form-mensaje{
+    margin-top: 20px;
+    padding: 10px 0;
+    font-family: 'poppinsmedium';
+    color: white;
+    background-color: rgba(69, 69, 69, 0.4);
 }
 
 /**subfooter**/
