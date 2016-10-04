@@ -1,31 +1,39 @@
 @media only screen and (max-width:1280px) {
-    header{
-        background-color: red;
-    }
-    
     #main img{
         height: 100%;
         width: auto;
     }
     
-    /*#main .full-main{
+    #main .full-main{
         height: 700px;
     }
     
     .full-main figcaption{
         padding: 250px 0;
-    }*/
+    }
     
 }
 
 @media only screen and (max-width:992px){
+    *{
+        font-size: 15px;
+    }
+    
     header{
-        background-color: orange;
+        background-color: gray;
     }
     
     header .logo img{
-        width: 100%;
+        width: 150px;
         padding: 10px 0;
+    }
+    
+    #main .full-main{
+        height: 680px;
+    }
+    
+    .full-main figcaption{
+        padding: 220px 0;
     }
     
     .menu{
@@ -47,8 +55,29 @@
 } 
 
 @media only screen and (max-width:768px){
+    *{
+        font-size: 14px;
+    }
+    
     header{
-        background-color: yellow;
+        background-color: dimgray;
+    }
+    
+    header .logo img{
+        width: 150px;
+        padding: 10px 0;
+    }
+    
+    #main .full-main{
+        height: 600px;
+    }
+    
+    .full-main figcaption{
+        padding: 230px 0;
+    }
+    
+    .full-main .main-bajada{
+        font-size: 1.2em;
     }
     
     .iconteractive .benef{

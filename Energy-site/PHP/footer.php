@@ -1,7 +1,7 @@
 <section class="subfooter">
     <div class="container-fluid">
         <div class="row">
-            <ul class="rs-grid list-inline col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+            <ul class="rs-grid list-inline col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
                     <a href="#" class="fa fa-facebook"></a>
                 </li>

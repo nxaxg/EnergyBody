@@ -24,6 +24,7 @@ header{
     width: 100%;
     z-index: 10;
     height: 70px;
+    border-bottom: 1px solid #383838;
 }
 
 
@@ -32,11 +33,12 @@ header{
 }
 .logo img{
     width: 200px;
+    padding: 4px 0;
 }
 
 header .login-btn,
 header .menu-btn{
-    color: greenyellow;
+    color: #CCFF40;
     margin-top: 14px;
     font-size: 2em;
     cursor: pointer;
@@ -70,7 +72,7 @@ header .menu-btn{
     height: 70px;
     top: 0;
     padding: 10px 0 6px 0;
-    background-color: #B0FF00;
+    background-color: #CCFF40;
 }
 
 .menu a{
@@ -82,12 +84,12 @@ header .menu-btn{
 
 
 .menu .nav-selected a{
-    color: black;
+    color: #212121;
     text-decoration: underline;
 }
 
 .menu .nav-option a:hover{
-    color: black;
+    color: #212121;
     transition: 0.4s;
 }
 
@@ -122,7 +124,7 @@ header .menu-btn{
 .full-main figcaption{
     position: absolute;
     background-color: rgba(0,0,0,0.3);
-    color: #B0FF00;
+    color: #CCFF40;
     height: auto;
     top: 0;
     padding: 300px 0;
@@ -155,7 +157,7 @@ header .menu-btn{
 .rs-grid li a{
     padding: 5px 10px;
     font-size: 2em;
-    color: #B0FF00;
+    color: #CCFF40;
     -webkit-transition: 0.4s ease;
     transition: 0.4s ease;
 }
@@ -193,8 +195,8 @@ header .menu-btn{
 #main:hover .wrap{
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
-    -webkit-filter: opacity(90%);
-    filter: opacity(90%);
+    -webkit-filter: contrast(95%);
+    filter: contrast(95%);
 }
 
 
@@ -208,7 +210,7 @@ header .menu-btn{
 }
 
 .content-title{
-    color: #B0FF00;
+    color: #CCFF40;
 }
 
 .qn-icons{
@@ -253,7 +255,6 @@ header .menu-btn{
     margin: 10px 0;
 }
 
-
 /**convenios**/
 .content-3{
     background-color: #2C2C2C;
@@ -262,14 +263,12 @@ header .menu-btn{
 }
 
 .convenios-grid{
-    padding: 20px 0;;
+    padding: 10px 0;;
 }
 
 .convenio img{
     width: 100%;
 }
-
-
 
 /**INTERIOR**/
 
@@ -303,8 +302,9 @@ header .menu-btn{
 
 .slider-group .qn-title,
 .slider-group-sucursal .qn-title{
-    color: #D8FF5A;
+    color: #CCFF40;
     font-size: 1.4em;
+    font-family: 'poppinsmedium';
 }
 
 .slider-group .par-icon,
@@ -352,10 +352,11 @@ header .menu-btn{
     text-transform: uppercase;
     font-size: 1.5em;
     padding: 5px 0;
-    background-color: black;
+    background-color: #212121;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     margin:0;
+    color: #D8FF5A;
 }
 
 .plan-valor{
@@ -363,10 +364,11 @@ header .menu-btn{
     text-transform: uppercase;
     font-size: 1.5em;
     padding: 5px 0;
-    background-color: black;
+    background-color: #212121;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     margin: 0;
+    color: #D8FF5A;
 }
 
 .plan-desc{
@@ -465,7 +467,7 @@ header .menu-btn{
 .divider{
     border: 0;
     height: 5px;
-    background: #333;
+    background: #2C2C2C;
     left: 15px;
 }
 
@@ -567,25 +569,27 @@ form .form-group{
 
 form .form-group input:focus,
 form .form-group textarea:focus{
-    outline: 1px solid #D8FF5A;
+    outline: 1px solid #CCFF40;
     background-color: white;
-    transition: 0.5s;
+    transition: 0.5s ease;
 }
 
 .btn-box .btn{
     border-radius: 0;
     padding: 10px 0;
-    background-color: #D8FF5A;
-    border: 2px solid #D8FF5A;
-    color: black;
+    background-color: #CCFF40;
+    border: 2px solid #CCFF40;
+    color: #212121;
     font-family: 'antonregular';
     font-size: 1.8em;
     text-transform: uppercase;
 }
 
+
+
 .btn-box .btn:hover{
     background-color: transparent;
-    border: 2px solid #D8FF5A;
+    border: 2px solid #CCFF40;
     color: #D8FF5A;
     transition: 0.4s;
 }
@@ -598,13 +602,18 @@ form .form-group textarea:focus{
     background-color: rgba(69, 69, 69, 0.4);
 }
 
+.form-mensaje.conf-mensaje{
+    color: #D8FF5A;
+}
+
 /**login**/
 .form-login{
     padding: 40px 0 10px 0;
 }
 
-.form-login .btn-box{
-    padding: 20px 0;
+.btn-box{
+    padding: 20px 0 10px 0;
+    overflow: hidden;
 }
 
 .content-2.form-cont{
@@ -612,11 +621,7 @@ form .form-group textarea:focus{
 }
 
 .call-register .par-dest-1{
-    color: #CCFF40;
-}
-
-.btn-box{
-    overflow: hidden;
+    color: #D8FF5A;
 }
 
 .btn-box.btn-call{
@@ -630,7 +635,7 @@ form .form-group textarea:focus{
 
 .btn-call .btn:hover{
     background-color: #D8FF5A;    
-    color: black;
+    color: #212121;
     transition: 0.4s;
 }
 
@@ -648,6 +653,10 @@ body form label{
     padding: 0;
 }
 
+.rs-grid{
+    padding: 30px 0 20px 0;
+}
+
 .rs-grid li a{
     font-size: 2.5em;
     color: rgba(176, 255, 0, 0.8);
@@ -659,7 +668,6 @@ body form label{
 .rs-grid li a:hover{
     -webkit-transform: scale(1.5);
     transform: scale(1.5);
-    color: #b0ff00;
 }
 
 /**footer**/
@@ -675,4 +683,13 @@ footer .copyright{
     font-weight: 100;
     font-size: 0.8em;
     padding-top: 10px;
+}
+
+footer a{
+    color: rgba(255,255,255,0.5);
+}
+
+footer a:hover{
+    color: #D8FF5A;
+    transition: 0.4s;
 }

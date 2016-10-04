@@ -28,26 +28,32 @@
                 <div class="row">
                     <!--logo-->
                     <figure class="logo col-lg-4 col-md-4 col-sm-4">
-                        <a href="#"> <img src="img/energy-logo.png" alt="Logo Energy Body"> </a>
+                        <a href="index.php"> <img src="img/energy-logo.png" alt="Logo Energy Body"> </a>
                     </figure>
                     <!--nav-->
                     <nav class="col-lg-8 col-md-8">
                         <ul class="col-lg-2 col-md-3 col-lg-offset-10 col-md-offset-9 list-inline">
-                            <li class="col-lg-4 text-center"><span class="login-btn login-sel fa fa-user" title="Login"></span></li>
-                            <li class="col-lg-4 col-md-offset-4 text-center"><span class="menu-btn fa fa-navicon" title="Menú"></span></li>
+                            <li class="col-lg-4 col-md-4 text-center">
+                                <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                            </li>
+                            <li class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4 text-center"><span class="menu-btn fa fa-navicon" title="Menú"></span></li>
                         </ul>
                     </nav>
                 </div>
             </div>
             <!--header-mobile-->
             <div class="header-cont hidden-lg hidden-md col-sm-12 col-xs-12">
-                <div class="col-sm-1 col-xs-1 text-center"><span class="login-btn login-sel fa fa-user" title="Login"></span></div>
-                <!--logo-->
-                <figure class="logo col-sm-4 col-sm-offset-3 col-xs-6 col-xs-offset-2 text-center">
-                    <a href="#"> <img src="img/energy-logo.png" alt="Logo Energy Body"> </a>
-                </figure>
-                <!--nav-->
-                <div class="col-sm-1 col-xs-1 col-sm-offset-3 col-xs-offset-1 text-center"><span class="menu-btn fa fa-navicon" title="Menú"></span></div>
+                <div class="row">
+                    <div class="col-sm-1 col-xs-2 text-center">
+                        <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                    </div>
+                    <!--logo-->
+                    <figure class="logo col-sm-4 col-sm-offset-3 col-xs-8 col-xs-offset-0 text-center">
+                        <a href="index.php"> <img src="img/energy-logo.png" class="text-center" alt="Logo Energy Body"> </a>
+                    </figure>
+                    <!--nav-->
+                    <div class="col-sm-1 col-xs-2 col-xs-offset-0 col-sm-offset-3 text-center"><span class="menu-btn fa fa-navicon" title="Menú"></span></div>
+                </div>
             </div>
         </div>
         <div class="menu col-lg-12">
@@ -120,33 +126,13 @@
                     </form>
                 </div>
                 <div class="row">
-                    <div class="form-mensaje col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0 text-center"> Mensaje </div>
+                    <!--<div class="form-mensaje col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0 text-center"> Mensaje </div>-->
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="subfooter">
-        <div class="container-fluid">
-            <div class="row">
-                <ul class="rs-grid list-inline col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-                    <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center"><a href="#" class="fa fa-facebook"></a></li>
-                    <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center"><a href="#" class="fa fa-twitter"></a></li>
-                    <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center"><a href="#" class="fa fa-instagram"></a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    
-    <footer>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="copyright col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <p>&copy;Copyright Energy Body 2016</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include('php/footer.php')?>
     
     <!--scripts-->
     <script src="js/jquery-1.11.3.js"></script>
