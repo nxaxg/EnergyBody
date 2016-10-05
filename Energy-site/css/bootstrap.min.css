@@ -3687,9 +3687,9 @@ textarea.input-lg {
 .btn:active.focus,
 .btn:active:focus,
 .btn:focus {
-    outline: thin dotted;
+    /*outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px
+    outline-offset: -2px*/
 }
 
 .btn.focus,
@@ -3701,10 +3701,10 @@ textarea.input-lg {
 
 .btn.active,
 .btn:active {
-    background-image: none;
+    /*background-image: none;
     outline: 0;
     -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)*/
 }
 
 .btn.disabled,
@@ -3730,9 +3730,9 @@ fieldset[disabled] a.btn {
 
 .btn-default.focus,
 .btn-default:focus {
-    color: #333;
+    /*color: #333;
     background-color: #e6e6e6;
-    border-color: #8c8c8c
+    border-color: #8c8c8c*/
 }
 
 .btn-default:hover {
@@ -3795,9 +3795,9 @@ fieldset[disabled] .btn-default:hover {
 
 .btn-primary.focus,
 .btn-primary:focus {
-    color: #fff;
+    /*color: #fff;
     background-color: #286090;
-    border-color: #122b40
+    border-color: #122b40*/
 }
 
 .btn-primary:hover {
@@ -7103,7 +7103,7 @@ button.close {
 
 .modal-header {
     padding: 15px;
-    border-bottom: 1px solid #e5e5e5
+    border-bottom: 2px solid rgba(229, 229, 229, 0.1);
 }
 
 .modal-header .close {
@@ -7123,7 +7123,7 @@ button.close {
 .modal-footer {
     padding: 15px;
     text-align: right;
-    border-top: 1px solid #e5e5e5
+    border-top: 2px solid rgba(229, 229, 229, 0.1);
 }
 
 .modal-footer .btn+.btn {
@@ -7150,7 +7150,7 @@ button.close {
 @media (min-width:768px) {
     .modal-dialog {
         width: 600px;
-        margin: 30px auto
+        margin: 40px auto
     }
     .modal-content {
         -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);

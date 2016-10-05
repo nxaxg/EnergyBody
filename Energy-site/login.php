@@ -34,7 +34,7 @@
                     <nav class="col-lg-8 col-md-8">
                         <ul class="col-lg-2 col-md-3 col-lg-offset-10 col-md-offset-9 list-inline">
                             <li class="col-lg-4 col-md-4 text-center">
-                                <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                                <a href="login.php"><span class="login-btn login-sel fa fa-user" title="Login"></span></a>
                             </li>
                             <li class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4 text-center"><span class="menu-btn fa fa-navicon" title="Menú"></span></li>
                         </ul>

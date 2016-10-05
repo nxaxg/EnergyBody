@@ -6,6 +6,9 @@ $(document).ready(function(){
         $(".close-btn").click(function(){
             $(".menu").slideUp(400);
         });
+        $('section').click(function(){
+            $(".menu").slideUp(400);
+        });
     });
     
     //slider icons

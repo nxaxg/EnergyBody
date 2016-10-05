@@ -101,12 +101,11 @@
                         <div class="row">
                             <p class="plan-valor">Valor: $99.000</p>
                         </div>
+                        <!--overlay-->
                         <div class="row">
-                            <div class="plan-overlay">
-                                <a href="#">
-                                    <span class="fa fa-thumbs-o-up"></span>
-                                    <p>Reservar plan</p>
-                                </a>
+                            <div class="plan-overlay" data-toggle="modal" data-target="#planmodal">
+                                <span class="fa fa-thumbs-o-up"></span>
+                                <p>Reservar plan</p>
                             </div>
                         </div>
                     </div>
@@ -124,12 +123,11 @@
                         <div class="row">
                             <p class="plan-valor">Valor: $99.000</p>
                         </div>
+                        <!--overlay-->
                         <div class="row">
-                            <div class="plan-overlay">
-                                <a href="#">
-                                    <span class="fa fa-thumbs-o-up"></span>
-                                    <p>Reservar plan</p>
-                                </a>
+                            <div class="plan-overlay" data-toggle="modal" data-target="#planmodal">
+                                <span class="fa fa-thumbs-o-up"></span>
+                                <p>Reservar plan</p>
                             </div>
                         </div>
                     </div>
@@ -147,12 +145,11 @@
                         <div class="row">
                             <p class="plan-valor">Valor: $99.000</p>
                         </div>
+                        <!--overlay-->
                         <div class="row">
-                            <div class="plan-overlay">
-                                <a href="#">
-                                    <span class="fa fa-thumbs-o-up"></span>
-                                    <p>Reservar plan</p>
-                                </a>
+                            <div class="plan-overlay" data-toggle="modal" data-target="#planmodal">
+                                <span class="fa fa-thumbs-o-up"></span>
+                                <p>Reservar plan</p>
                             </div>
                         </div>
                     </div>
@@ -170,12 +167,11 @@
                         <div class="row">
                             <p class="plan-valor">Valor: $99.000</p>
                         </div>
+                        <!--overlay-->
                         <div class="row">
-                            <div class="plan-overlay">
-                                <a href="#">
-                                    <span class="fa fa-thumbs-o-up"></span>
-                                    <p>Reservar plan</p>
-                                </a>
+                            <div class="plan-overlay" data-toggle="modal" data-target="#planmodal">
+                                <span class="fa fa-thumbs-o-up"></span>
+                                <p>Reservar plan</p>
                             </div>
                         </div>
                     </div>
@@ -193,12 +189,11 @@
                         <div class="row">
                             <p class="plan-valor">Valor: $99.000</p>
                         </div>
+                        <!--overlay-->
                         <div class="row">
-                            <div class="plan-overlay">
-                                <a href="#">
-                                    <span class="fa fa-thumbs-o-up"></span>
-                                    <p>Reservar plan</p>
-                                </a>
+                            <div class="plan-overlay" data-toggle="modal" data-target="#planmodal">
+                                <span class="fa fa-thumbs-o-up"></span>
+                                <p>Reservar plan</p>
                             </div>
                         </div>
                     </div>
@@ -216,16 +211,14 @@
                         <div class="row">
                             <p class="plan-valor">Valor: $99.000</p>
                         </div>
+                        <!--overlay-->
                         <div class="row">
-                            <div class="plan-overlay">
-                                <a href="#">
-                                    <span class="fa fa-thumbs-o-up"></span>
-                                    <p>Reservar plan</p>
-                                </a>
+                            <div class="plan-overlay" data-toggle="modal" data-target="#planmodal">
+                                <span class="fa fa-thumbs-o-up"></span>
+                                <p>Reservar plan</p>
                             </div>
                         </div>
                     </div>
-                    
                 </div>
                 <div class="row">
                     <div class="plan-detalles">
@@ -240,6 +233,65 @@
                             <li>Contratando plan trimestral y semestral gratis primera capa.*</li>
                         </ul>
                     </div>
+                </div>
+                
+                <!--modal-->
+                <div class="modal fade" id="planmodal" tabindex="-1" role="dialog" aria-labelledby="btn-planmodal">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close close-modal-icon" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title text-center" id="planmodal-title">Confirmar Compra</h4>
+                      </div>
+                      <div class="modal-body form-login">
+                          <form action="">
+                              <div class="row">
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label for="username">Nombre de usuario:</label>
+                                        <input type="text" class="form-control" name="username" disabled>
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label for="email">E-Mail de usuario:</label>
+                                        <input type="text" class="form-control" name="email" disabled>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <hr class="divider divider-2" role="separator">
+                                </div>
+                                <div class="row">                            
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label for="plan">Nombre de plan:</label>
+                                        <input type="text" class="form-control" name="plan" disabled>
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <label for="valor">Valor de plan:</label>
+                                        <input type="text" class="form-control" name="valor" disabled>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <hr class="divider divider-2" role="separator">
+                                </div>
+                                <div class="row">                            
+                                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label for="plan">Seleccione medio de pago:</label>
+                                        <select name="medio-pago" class="form-control" required>
+                                            <option value="null" disabled selected>Medio de pago</option>
+                                            <option value="Masculino">Paypal</option>
+                                            <option value="Feminino">Webpay</option>
+                                            <option value="Feminino">Redcompra</option>
+                                        </select>
+                                    </div>
+                                </div>
+                          </form>
+                      </div>
+                      <div class="modal-footer text-center">
+                        <button type="button" class="btn btn-default btn-close-modal" data-dismiss="modal">Close</button>
+                        <a href="perfil.php">
+                            <button type="button" class="btn btn-primary btn-comprar-modal">Save changes</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>

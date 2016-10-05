@@ -422,21 +422,18 @@ header .menu-btn{
     background: url(../img/sucursal1.jpg);
     background-position: center, bottom;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .slider.sucursal:nth-child(2){
     background: url(../img/sucursal2.jpg);
     background-position: center, bottom;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .slider.sucursal:nth-child(3){
     background: url(../img/sucursal3.jpg);
     background-position: center, bottom;
     background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .slider.sucursal figure{
@@ -554,21 +551,21 @@ header .menu-btn{
     color: #D8FF5A;
 }
 
-form .form-group input,
-form .form-group textarea,
-form .form-group select{
+.form-group input,
+.form-group textarea,
+.form-group select{
     border-radius: 0px;
     font-family: 'poppinslight';
     font-size: 1em;
     background-color: rgba(255,255,255,0.8);
 }
 
-form .form-group{
+.form-group{
     background-color: transparent;
 }
 
-form .form-group input:focus,
-form .form-group textarea:focus{
+.form-group input:focus,
+.form-group textarea:focus{
     outline: 1px solid #CCFF40;
     background-color: white;
     transition: 0.5s ease;
@@ -639,10 +636,73 @@ form .form-group textarea:focus{
     transition: 0.4s;
 }
 
-body form label{
+label{
     color: white;
     font-family: 'poppinsmedium';
     background-color: transparent;
+}
+
+.modal-content{
+    background-color: #3D3D3D;
+}
+
+.modal-title{
+    font-family: 'poppinsbold';
+    text-transform: uppercase;
+    color: #D8FF5A;
+    font-size: 1.5em;
+}
+
+.btn-close-modal,
+.btn-comprar-modal{
+    border-radius: 0;
+    font-family: 'poppinsbold';
+    text-transform: uppercase;
+    font-size: 1em;
+    border: 1px solid transparent;
+    padding: 10px 15px;
+}
+
+.btn-close-modal{
+    margin-right: 10px;
+}
+
+.btn-comprar-modal{
+    background-color: #D8FF5A;
+    color: #212121;
+}
+
+.btn-comprar-modal:hover,
+.btn-close-modal{
+    background-color: transparent;
+    border: 1px solid #D8FF5A;
+    color: #D8FF5A;
+    transition: 0.4s;
+}
+
+.btn-close-modal:hover{
+    background-color: dimgray;
+    border: 1px solid dimgray;
+}
+
+.close-modal-icon{
+    color: #D8FF5A;
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
+}
+
+.close-modal-icon:hover{
+    color: #D8FF5A;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.btn:focus,
+.btn:active,
+.btn:selected,
+.btn:visited,
+.btn:link{
+    outline: none;
 }
 
 /**subfooter**/
