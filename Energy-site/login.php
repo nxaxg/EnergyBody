@@ -1,3 +1,32 @@
+<?php require_once('php/connection.php');
+    
+//consulta si sesión ya está iniciada
+if(!isset($_SESSION))session_start();
+
+if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password]) && $_POST[password]<>"")){
+    $query="SELECT * FROM usuarios where username='$_POST[username]' AND password='$_POST[password]'";
+    $resultado=$connection->query($query);
+    
+    if($total = $resultado->num_rows){
+         $usuario = $resultado->fetch_assoc();
+            
+         $_SESSION[user_id]=$usuario[id_usuarios];
+         $_SESSION[user_name]=$usuario[nombre];
+         $_SESSION[user_mail]=$usuario[email];
+         $_SESSION[user_edad]=$usuario[edad];
+         $_SESSION[user_sexo]=$usuario[sexo];
+         $_SESSION[user_username]=$usuario[username];
+         $_SESSION[user_password]=$usuario[password];
+         $volver=($_SESSION[volver])?$_SESSION[volver]:"perfil.php";
+         header("Location: ".$volver."?id_user=".$_SESSION[user_id]);
+    } else {
+     $error="Usuario/Clave no registrados";
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -34,7 +63,12 @@
                     <nav class="col-lg-8 col-md-8">
                         <ul class="col-lg-2 col-md-3 col-lg-offset-10 col-md-offset-9 list-inline">
                             <li class="col-lg-4 col-md-4 text-center">
-                                <a href="login.php"><span class="login-btn login-sel fa fa-user" title="Login"></span></a>
+                                <?php
+                                    if(!$_SESSION[user_id]){?>
+                                        <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                                    <?php }else{?>
+                                        <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>"><span class="login-btn fa fa-universal-access" title="Mi perfil"></span></a>
+                                <?php }?>
                             </li>
                             <li class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4 text-center"><span class="menu-btn fa fa-navicon" title="Menú"></span></li>
                         </ul>
@@ -45,7 +79,12 @@
             <div class="header-cont hidden-lg hidden-md col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-sm-1 col-xs-2 text-center">
-                        <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                        <?php
+                             if(!$_SESSION[user_id]){?>
+                                <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                            <?php }else{?>
+                                <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>"><span class="login-btn fa fa-universal-access" title="Mi perfil"></span></a>
+                        <?php }?>
                     </div>
                     <!--logo-->
                     <figure class="logo col-sm-4 col-sm-offset-3 col-xs-8 col-xs-offset-0 text-center">
@@ -83,21 +122,28 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="row">
-                    <form action="#" class="form-login col-lg-4 col-md-6 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-3 col-sm-offset-2 col-xs-offset-0">
+                   <!--formulario-->
+                    <form method="post" class="form-login col-lg-4 col-md-6 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-3 col-sm-offset-2 col-xs-offset-0">
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <input type="text" class="form-control" placeholder="Nombre de usuario" name="username">
+                            <input type="text" class="form-control" placeholder="Nombre de usuario" name="username" id="username">
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <input type="password" class="form-control" placeholder="Contraseña" name="password">
+                            <input type="password" class="form-control" placeholder="Contraseña" name="password" id="password">
                         </div>
                         <div class="form-group btn-box col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                            <button type="submit" class="btn btn-default col-lg-8 col-md-10 col-sm-10 col-xs-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">Ingresar</button>
+                            <button type="submit" class="btn btn-default col-lg-8 col-md-10 col-sm-10 col-xs-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" name="ingresar">Ingresar</button>
                         </div>
                     </form>
+                    <!--/formulario-->
                 </div>
+                <?php
+                if($error){?>
                 <div class="row">
-                    <div class="form-mensaje col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0 text-center"> Mensaje </div>
+                    <div class="form-mensaje col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0 text-center">
+                        <?php echo $error ?>
+                    </div>
                 </div>
+                <?php } ?>
             </div>
         </div>
     </section>
@@ -117,7 +163,7 @@
         </div>
     </section>
     
-    <?php include('php/footer.php')?>
+    <?php include('php/footer.php');?>
     
     <!--scripts-->
     <script src="js/jquery-1.11.3.js"></script>

@@ -1,3 +1,12 @@
+<?php require('php/connection.php');
+
+//Session started
+if(!isset($_SESSION))session_start();
+$asunto = $_GET[asunto];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -35,7 +44,12 @@
                     <nav class="col-lg-8 col-md-8">
                         <ul class="col-lg-2 col-md-3 col-lg-offset-10 col-md-offset-9 list-inline">
                             <li class="col-lg-4 col-md-4 text-center">
-                                <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                                <?php
+                                    if(!$_SESSION[user_id]){?>
+                                        <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                                    <?php }else{?>
+                                        <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>"><span class="login-btn fa fa-universal-access" title="Mi perfil"></span></a>
+                                <?php }?>
                             </li>
                             <li class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4 text-center"><span class="menu-btn fa fa-navicon" title="Menú"></span></li>
                         </ul>
@@ -46,7 +60,12 @@
             <div class="header-cont hidden-lg hidden-md col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-sm-1 col-xs-2 text-center">
-                        <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                        <?php
+                            if(!$_SESSION[user_id]){?>
+                                <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                            <?php }else{?>
+                                <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>"><span class="login-btn fa fa-universal-access" title="Mi perfil"></span></a>
+                        <?php }?>
                     </div>
                     <!--logo-->
                     <figure class="logo col-sm-4 col-sm-offset-3 col-xs-8 col-xs-offset-0 text-center">
@@ -88,16 +107,16 @@
                 <div class="row">
                     <form action="#" class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
                         <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre">
                         </div>
                         <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <input type="email" class="form-control" placeholder="E-Mail">
+                            <input type="email" class="form-control" placeholder="E-Mail" name="mail">
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <input type="text" class="form-control" placeholder="Asunto">
+                            <input type="text" class="form-control" placeholder="Asunto" name="asunto" value="<?php echo $asunto;?>">
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <textarea placeholder="Mensaje" class="form-control" rows="3"></textarea>
+                            <textarea placeholder="Mensaje" class="form-control" rows="3" name="mensaje"></textarea>
                         </div>
                         <div class="form-group btn-box col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                             <button type="submit" class="btn btn-default col-lg-4 col-md-4 col-sm-6 col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-12">Enviar</button>
@@ -105,9 +124,13 @@
                     </form>
                 </div>
                 <div class="row">
-                    <div class="form-mensaje col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0 text-center">
-                        Mensaje
-                    </div>
+                    <?php 
+                        if($error){?>
+                            <div class="form-mensaje col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0 text-center">
+                             Mensaje
+                            </div>
+                    <?php    }
+                    ?>
                 </div>
         </div>
     </section>

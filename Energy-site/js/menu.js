@@ -35,4 +35,7 @@ $(document).ready(function(){
         speed : 5000, // Slideshow speed in milliseconds.
         showNav : true // Set to false to hide navigation arrows.
     });
+    
+    
+    
 });

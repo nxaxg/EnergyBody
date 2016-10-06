@@ -1,3 +1,24 @@
+<?php require_once('php/connection.php');
+
+
+//consulta si sesión ya está iniciada
+if(!isset($_SESSION))session_start();
+
+$querysel = "select * from `usuarios` where `id_usuarios`='$_GET[id_user]'";
+$resultadosel = $connection->query($querysel);
+$user = $resultadosel->fetch_assoc();
+
+$selectrel = "select * from `relacion` where `usuario_id`='$_GET[id_user]'";
+$resrel = $connection->query($selectrel);
+$rel = $resrel->fetch_assoc();
+
+$selecplan = "select * from `planes` where `id_planes`='$rel[planes_id]'";
+$relplan = $connection->query($selecplan);
+$plan = $relplan->fetch_assoc();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -34,7 +55,12 @@
                     <nav class="col-lg-8 col-md-8">
                         <ul class="col-lg-2 col-md-3 col-lg-offset-10 col-md-offset-9 list-inline">
                             <li class="col-lg-4 col-md-4 text-center">
-                                <a href="login.php"><span class="login-btn login-sel fa fa-user" title="Login"></span></a>
+                                <?php
+                                    if(!$_SESSION[user_id]){?>
+                                        <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                                    <?php }else{?>
+                                        <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>"><span class="login-btn fa fa-universal-access" title="Mi perfil"></span></a>
+                                    <?php }?>
                             </li>
                             <li class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4 text-center"><span class="menu-btn fa fa-navicon" title="Menú"></span></li>
                         </ul>
@@ -45,7 +71,12 @@
             <div class="header-cont hidden-lg hidden-md col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-sm-1 col-xs-2 text-center">
-                        <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                        <?php
+                            if(!$_SESSION[user_id]){?>
+                                <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                            <?php }else{?>
+                                <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>"><span class="login-btn fa fa-universal-access" title="Mi perfil"></span></a>
+                        <?php }?>
                     </div>
                     <!--logo-->
                     <figure class="logo col-sm-4 col-sm-offset-3 col-xs-8 col-xs-offset-0 text-center">
@@ -86,44 +117,51 @@
                         <div class="row">
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <label for="nombre">Nombre:</label>
-                                <input type="text" class="form-control" name="nombre" disabled>
+                                <input type="text" class="form-control" name="nombre" disabled value="<?php echo $user[nombre]; ?>">
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <label for="username">Nombre de usuario:</label>
-                                <input type="text" class="form-control" name="username" disabled>
+                                <input type="text" class="form-control" name="username" disabled value="<?php echo $user[username]; ?>">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <label for="rut">RUT:</label>
-                                <input type="text" class="form-control" name="rut" disabled>
+                                <input type="text" class="form-control" name="rut" disabled value="<?php echo $user[rut]; ?>">
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <label for="email">E-Mail:</label>
-                                <input type="text" class="form-control" name="email" disabled>
+                                <input type="text" class="form-control" name="email" disabled value="<?php echo $user[email]; ?>">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <label for="edad">Edad:</label>
-                                <input type="text" class="form-control" name="edad" disabled>
+                                <input type="text" class="form-control" name="edad" disabled value="<?php echo $user[edad]; ?>">
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <label for="sexo">Sexo:</label>
-                                <input type="text" class="form-control" name="sexo" disabled>
+                                <input type="text" class="form-control" name="sexo" disabled value="<?php echo $user[sexo]; ?>">
                             </div>
                         </div>
                         <div class="row">                            
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <label for="plan">Plan inscrito:</label>
-                                <input type="text" class="form-control" name="plan" disabled>
+                                <input type="text" class="form-control" name="plan" disabled value="<?php echo $plan[nombre]; ?>">
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <label for="valor">Valor plan:</label>
-                                <input type="text" class="form-control" name="valor" disabled>
+                                <input type="text" class="form-control" name="valor" disabled value="<?php echo $plan[valor];?>">
                             </div>
                         </div>
                     </form>
+                    <div class="row">
+                            <div class="form-group btn-box col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                                <a href="logout.php">
+                                    <button class="btn btn-default col-lg-8 col-md-10 col-sm-10 col-xs-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" name="ingresar" >Cerrar sesión</button>
+                                </a>
+                            </div>
+                        </div>
                 </div>
                 <div class="row">
                     <!--<div class="form-mensaje col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0 text-center"> Mensaje </div>-->

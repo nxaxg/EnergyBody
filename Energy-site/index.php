@@ -1,3 +1,9 @@
+<?php require_once('php/connection.php');
+
+if(!isset($_SESSION))session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -34,7 +40,12 @@
                     <nav class="col-lg-8 col-md-8">
                         <ul class="col-lg-2 col-md-3 col-lg-offset-10 col-md-offset-9 list-inline">
                             <li class="col-lg-4 col-md-4 text-center">
-                                <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                                <?php
+                                    if(!$_SESSION[user_id]){?>
+                                        <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                                    <?php }else{?>
+                                        <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>"><span class="login-btn fa fa-universal-access" title="Mi perfil"></span></a>
+                                    <?php }?>
                             </li>
                             <li class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4 text-center"><span class="menu-btn fa fa-navicon" title="Menú"></span></li>
                         </ul>
@@ -45,7 +56,12 @@
             <div class="header-cont hidden-lg hidden-md col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-sm-1 col-xs-2 text-center">
-                        <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                        <?php
+                            if(!$_SESSION[user_id]){?>
+                                <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                            <?php }else{?>
+                                <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>"><span class="login-btn fa fa-universal-access" title="Mi perfil"></span></a>
+                        <?php }?>
                     </div>
                     <!--logo-->
                     <figure class="logo col-sm-4 col-sm-offset-3 col-xs-8 col-xs-offset-0 text-center">

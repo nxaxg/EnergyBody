@@ -58,7 +58,7 @@ header .menu-btn{
 .menu-btn:hover,
 .nav-option:hover{
     -webkit-transform: scale(1.2);
-    transform: scale(1.2)
+    transform: scale(1.2);
 }
 
 .header-cont .login-sel{
@@ -263,7 +263,7 @@ header .menu-btn{
 }
 
 .convenios-grid{
-    padding: 10px 0;;
+    padding: 10px 0;
 }
 
 .convenio img{
@@ -339,12 +339,19 @@ header .menu-btn{
     position: relative;
     margin: 20px 0;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .planes-cont{
     padding: 30px 0;
     overflow: hidden;
     margin:0;
+    position: relative;
+}
+
+.plan-content{
+    position: relative;
+    overflow: hidden;
 }
 
 .plan-title{
@@ -378,12 +385,12 @@ header .menu-btn{
 }
 
 .plan-overlay{
+    position: absolute;
     background-color: rgba(0,0,0,0.5);
     border-radius: 10px;
     padding: 60px 0;
-    position: absolute;
     bottom: 0;
-    width: 94%;
+    width: 93.89%;
     height: 100%;
     visibility: hidden;
     cursor: pointer;
