@@ -308,7 +308,8 @@ header .menu-btn{
 }
 
 .slider-group .par-icon,
-.slider-group-sucursal .par-icon{
+.slider-group-sucursal .par-icon,
+.par-icon{
     color: white;
     font-family: 'poppinslight';
     padding: 10px 0;

@@ -113,7 +113,11 @@ $resultado = $connection->query($query);
                     <h1 class="content-title text-center">Planes de entrenamiento</h1>
                 </div>
                 <div class="planes-cont">
-                  
+                  <?php   
+                    $queryexist = "select * from `relacion` where `relacion`.`usuario_id`='$_SESSION[user_id]'";
+                    $resulexist = $connection->query($queryexist);
+                    $exist = $resulexist->fetch_assoc();
+                    ?>
                    <!--php callback-->
                    <?php while($plan = $resultado->fetch_assoc()){?>
                    
@@ -138,15 +142,48 @@ $resultado = $connection->query($query);
                             </div>
                         </div>
                         <!--overlay-->
-                        <div class="plan-overlay col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" data-toggle="modal" data-target="#planmodal<?php echo $plan[id_planes]?>">
-                            <div class="row">
-                                <span class="fa fa-thumbs-o-up"></span>
+                        <?php if($exist){ ?>
+                            <div class="plan-overlay col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" data-toggle="modal" data-target="#modal-alert">
+                                <div class="row">
+                                    <span class="fa fa-thumbs-o-up"></span>
+                                </div>
+                                <div class="row">
+                                    <p>Reservar plan</p>
+                                </div>
                             </div>
-                            <div class="row">
-                                <p>Reservar plan</p>
+                        <?php }else{ ?>
+                            <div class="plan-overlay col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" data-toggle="modal" data-target="#planmodal<?php echo $plan[id_planes];?>">
+                                <div class="row">
+                                    <span class="fa fa-thumbs-o-up"></span>
+                                </div>
+                                <div class="row">
+                                    <p>Reservar plan</p>
+                                </div>
                             </div>
-                        </div>
+                        <?php }?>
                     </div>
+                    <!--modal alert-->
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal-alert" tabindex="-1" role="dialog" aria-labelledby="btn-planmodal">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title text-center" id="myModalLabel">Alerta</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p class="par-icon">Sólo puedes realizar una compra de plan por usuario :(</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn-close-modal" data-dismiss="modal">Cerrar ventana</button>
+                              <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>">
+                                  <button class="btn btn-primary btn-comprar-modal">Ir a perfil</button>
+                              </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
                     
                     <!--modal-->
                 <div class="modal fade" id="planmodal<?php echo $plan[id_planes];?>" tabindex="-1" role="dialog" aria-labelledby="btn-planmodal">
@@ -161,7 +198,7 @@ $resultado = $connection->query($query);
                               <div class="row">
                                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <label for="username">Nombre de usuario</label>                                        
-                                        <input type="text" class="form-control" name="username" disabled value="<?php echo $_SESSION[user_name];?>">
+                                        <input type="text" class="form-control" name="username" disabled value="<?php echo $_SESSION[user_username];?>">
                                     </div>
                                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <label for="email">E-Mail de usuario:</label>
@@ -193,12 +230,12 @@ $resultado = $connection->query($query);
                                             <option value="Feminino">Webpay</option>
                                             <option value="Feminino">Redcompra</option>
                                         </select>
-                                        <input type="hidden" name="idplan" value="<?php echo $plan[id_planes];?>">
+                                        <input type="hidden" name="idplan" value="<?php $planid = $plan[id_planes]; echo $planid;?>">
                                     </div>
                                 </div>
                       </div>
                       <div class="modal-footer text-center">
-                        <button type="button" class="btn btn-default btn-close-modal" data-dismiss="modal">Cerrar ventana</button>
+                            <button type="button" class="btn btn-default btn-close-modal" data-dismiss="modal">Cerrar ventana</button>
                             <input type="submit" name="comprar" class="btn btn-primary btn-comprar-modal" value="comprar">
                       </div>
                       </form>
@@ -207,27 +244,17 @@ $resultado = $connection->query($query);
                 </div>
                     
 <?php 
-                                                                     
-                    
+}
 //agregar compra
 if(isset($_POST[comprar]) && $_POST[comprar]=="comprar"){
-    $queryexist = "select * from `relacion` where `relacion`.`usuario_id`='$_SESSION[user_id]'";
-    $resulexist = $connection->query($queryexist);
-    $exist = $resulexist->fetch_assoc();
-    if($exist){
-        $error = true;
-    }else{
-        $y = $y + 1;
-        $queryinsert.$y = "INSERT INTO `relacion` (`usuario_id`, `planes_id`) VALUES ('$_SESSION[user_id]', '$_POST[idplan]')";
-        $connection->query($queryinsert.$y);
-
-         $ID = $connection->insert_id;
-        if($ID)header("Location: index.php");
-    }
-}  
+    $y = $y + 1;
+    $queryinsert.$y = "INSERT INTO `relacion` (`usuario_id`, `planes_id`) VALUES ('$_SESSION[user_id]', '$planid')";
+    $connection->query($queryinsert.$y);
+    $ID = $connection->insert_id;
+    if($ID)header("Location: perfil.php?id_user=".$_SESSION[user_id]);
+                                                                  
 }
-
-  ?><!--php end-->
+ ?><!--php end-->
                     
                 </div>
                 <!--detalles-->

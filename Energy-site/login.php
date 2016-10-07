@@ -1,5 +1,7 @@
 <?php require_once('php/connection.php');
-    
+
+$new_user = $_GET[reg];
+
 //consulta si sesión ya está iniciada
 if(!isset($_SESSION))session_start();
 
@@ -19,7 +21,7 @@ if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password])
          $_SESSION[user_password]=$usuario[password];
          $volver=($_SESSION[volver])?$_SESSION[volver]:"perfil.php";
          header("Location: ".$volver."?id_user=".$_SESSION[user_id]);
-    } else {
+    }else {
      $error="Usuario/Clave no registrados";
     }
 }
@@ -125,7 +127,7 @@ if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password])
                    <!--formulario-->
                     <form method="post" class="form-login col-lg-4 col-md-6 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-3 col-sm-offset-2 col-xs-offset-0">
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <input type="text" class="form-control" placeholder="Nombre de usuario" name="username" id="username">
+                            <input type="text" class="form-control" placeholder="Nombre de usuario" name="username" id="username" value="<?php echo $new_user?>">
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <input type="password" class="form-control" placeholder="Contraseña" name="password" id="password">

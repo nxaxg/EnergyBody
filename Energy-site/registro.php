@@ -2,6 +2,15 @@
 
 if(!isset($_SESSION))session_start();
 
+if(isset($_POST[registrar]) && $_POST[registrar]=="registrar"){
+    $queryinsert = "INSERT INTO `usuarios` (`nombre`, `rut`, `email`, `edad`, `sexo`, `username`, `password`) VALUES ('$_POST[nombre]', '$_POST[rut]', '$_POST[email]', '$_POST[edad]', '$_POST[sexo]', '$_POST[username]', '$_POST[password]')";
+    $connection->query($queryinsert);
+     $ID = $connection->insert_id;
+    if($ID)header("Location: login.php?reg=".$_POST[username]);
+}else{
+    $error = "Error al registrar usuario";
+}
+
 ?>
 
 
@@ -99,7 +108,7 @@ if(!isset($_SESSION))session_start();
         <div class="container-fluid">
             <div class="row">
                 <div class="row">
-                    <form action="#" class="form-login col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0">
+                    <form method="post" class="form-login col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0">
                         <div class="row">
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
@@ -121,7 +130,7 @@ if(!isset($_SESSION))session_start();
                                 <select name="sexo" class="form-control" required>
                                     <option value="null" disabled selected>Sexo</option>
                                     <option value="Masculino">Masculino</option>
-                                    <option value="Feminino" disabled>Femenino</option>
+                                    <option value="Femenino">Femenino</option>
                                 </select>
                             </div>
                         </div>
@@ -135,13 +144,17 @@ if(!isset($_SESSION))session_start();
                         </div>
                         <div class="row">
                             <div class="form-group btn-box col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                                <button type="submit" class="btn btn-default col-lg-6 col-md-8 col-sm-8 col-xs-10 col-lg-offset-3 col-md-offset-2 col-sm-offset-2 col-xs-offset-1">Registrar</button>
+                                <input type="submit" class="btn btn-default col-lg-6 col-md-8 col-sm-8 col-xs-10 col-lg-offset-3 col-md-offset-2 col-sm-offset-2 col-xs-offset-1" name="registrar" value="registrar">
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="row">
+                <?php
+                    if($error){?>
+                        <div class="row">
                     <div class="form-mensaje col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0 text-center"> Mensaje </div>
+                <?php    }
+                ?>
                 </div>
             </div>
         </div>
