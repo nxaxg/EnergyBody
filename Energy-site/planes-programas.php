@@ -51,11 +51,10 @@ $resultado = $connection->query($query);
                     <nav class="col-lg-8 col-md-8">
                         <ul class="col-lg-2 col-md-3 col-lg-offset-10 col-md-offset-9 list-inline">
                             <li class="col-lg-4 col-md-4 text-center">
-                               <?php
-                                    if(!$_SESSION[user_id]){?>
-                                        <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                               <?php if(!$_SESSION[user_id]){?>
+                                        <span class="login-btn fa fa-user" title="Login"></span>
                                     <?php }else{?>
-                                        <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>"><span class="login-btn fa fa-universal-access" title="Mi perfil"></span></a>
+                                        <span class="logged-btn fa fa-universal-access" title="Logged"></span>
                                 <?php }?>
                             </li>
                             <li class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4 text-center"><span class="menu-btn fa fa-navicon" title="Menú"></span></li>
@@ -67,11 +66,10 @@ $resultado = $connection->query($query);
             <div class="header-cont hidden-lg hidden-md col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-sm-1 col-xs-2 text-center">
-                        <?php
-                            if(!$_SESSION[user_id]){?>
-                                <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                        <?php if(!$_SESSION[user_id]){?>
+                                <span class="login-btn fa fa-user" title="Login"></span>
                             <?php }else{?>
-                                <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>"><span class="login-btn fa fa-universal-access" title="Mi perfil"></span></a>
+                                <span class="logged-btn fa fa-universal-access" title="Logged"></span>
                         <?php }?>
                     </div>
                     <!--logo-->
@@ -96,6 +94,28 @@ $resultado = $connection->query($query);
                 <div class="close-btn col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center"> <span class="fa fa-close"></span> </div>
             </div>
         </div>
+        <!--login logout-->
+        <div class="menu-login col-lg-12">
+            <div class="container-fluid">
+                <ul class="list-inline col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                    <li class="nav-option col-lg-2 col-md-2 col-sm-12 col-xs-12 text-center"><a href="login.php">Login</a></li>
+                    <li class="nav-option col-lg-2 col-md-2 col-sm-12 col-xs-12 text-center"><a href="registro.php">Registro</a></li>
+                    <input type="hidden" class="col-lg-10">
+                </ul>
+                <div class="close-btn col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center"> <span class="fa fa-close"></span> </div>
+            </div>
+        </div>
+        <div class="menu-logged col-lg-12">
+            <div class="container-fluid">
+                <ul class="list-inline col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                    <li class="nav-option col-lg-2 col-md-2 col-sm-12 col-xs-12 text-center"><a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>">Mi perfil</a></li>
+                    <li class="nav-option col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center"><a href="logout.php">Cerrar sesión</a></li>
+                    <input type="hidden" class="col-lg-10">
+                </ul>
+                <div class="close-btn col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center"> <span class="fa fa-close"></span> </div>
+            </div>
+        </div>
+        <!--/login logout-->
     </header>
     
     <section class="main-int">
@@ -138,12 +158,21 @@ $resultado = $connection->query($query);
                                 </ul>
                             </div>
                             <div class="row">
-                                <p class="plan-valor">Valor: $<?php echo $plan[valor];?></p>
+                                <p class="plan-valor">Valor: $<?php echo number_format($plan[valor], 0, ",", ".");?></p>
                             </div>
                         </div>
                         <!--overlay-->
                         <?php if($exist){ ?>
                             <div class="plan-overlay col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" data-toggle="modal" data-target="#modal-alert">
+                                <div class="row">
+                                    <span class="fa fa-thumbs-o-up"></span>
+                                </div>
+                                <div class="row">
+                                    <p>Reservar plan</p>
+                                </div>
+                            </div>
+                        <?php }else if(!$_SESSION[user_id]){ ?>
+                            <div class="plan-overlay col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" data-toggle="modal" data-target="#modal-login">
                                 <div class="row">
                                     <span class="fa fa-thumbs-o-up"></span>
                                 </div>
@@ -172,7 +201,7 @@ $resultado = $connection->query($query);
                             <h4 class="modal-title text-center" id="myModalLabel">Alerta</h4>
                           </div>
                           <div class="modal-body">
-                            <p class="par-icon">Sólo puedes realizar una compra de plan por usuario :(</p>
+                            <p class="par-icon">Sólo puedes realizar una compra de plan por usuario <span class="fa fa-thumbs-o-down"></span></p>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-default btn-close-modal" data-dismiss="modal">Cerrar ventana</button>
@@ -184,8 +213,30 @@ $resultado = $connection->query($query);
                       </div>
                     </div>
                     
+                    <!--modal login-->
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="btn-planmodal">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title text-center" id="myModalLabel">Alerta</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p class="par-icon">Necesitas estar registrado para poder realizar una compra. <span class="fa fa-smile-o"></span></p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn-close-modal" data-dismiss="modal">Cerrar ventana</button>
+                              <a href="login.php">
+                                  <button class="btn btn-primary btn-comprar-modal">Iniciar sesión</button>
+                              </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     
-                    <!--modal-->
+                    
+                <!--modal-->
                 <div class="modal fade" id="planmodal<?php echo $plan[id_planes];?>" tabindex="-1" role="dialog" aria-labelledby="btn-planmodal">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -202,7 +253,7 @@ $resultado = $connection->query($query);
                                     </div>
                                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <label for="email">E-Mail de usuario:</label>
-                                        <input type="text" class="form-control" name="email" value="<?php echo $_SESSION[user_mail];?>">
+                                        <input type="text" class="form-control" name="email" value="<?php echo $_SESSION[user_mail];?>" disabled>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -215,7 +266,7 @@ $resultado = $connection->query($query);
                                     </div>
                                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <label for="valor">Valor de plan:</label>
-                                        <input type="text" class="form-control" name="valor" disabled value="<?php echo $plan[valor]?>">
+                                        <input type="text" class="form-control" name="valor" disabled value="$<?php echo number_format($plan[valor], 0, ",", ".");?>">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -226,11 +277,11 @@ $resultado = $connection->query($query);
                                         <label for="plan">Seleccione medio de pago:</label>
                                         <select name="medio-pago" class="form-control" required>
                                             <option value="null" disabled selected>Medio de pago</option>
-                                            <option value="Masculino">Paypal</option>
-                                            <option value="Feminino">Webpay</option>
-                                            <option value="Feminino">Redcompra</option>
+                                            <option value="Paypal">Paypal</option>
+                                            <option value="Webpay">Webpay</option>
+                                            <option value="Redcompra">Red Compra</option>
                                         </select>
-                                        <input type="hidden" name="idplan" value="<?php $planid = $plan[id_planes]; echo $planid;?>">
+                                        <input type="text" name="idplan" value="<?php echo $plan[id_planes];?>">
                                     </div>
                                 </div>
                       </div>
@@ -248,7 +299,7 @@ $resultado = $connection->query($query);
 //agregar compra
 if(isset($_POST[comprar]) && $_POST[comprar]=="comprar"){
     $y = $y + 1;
-    $queryinsert.$y = "INSERT INTO `relacion` (`usuario_id`, `planes_id`) VALUES ('$_SESSION[user_id]', '$planid')";
+    $queryinsert.$y = "INSERT INTO `relacion` (`usuario_id`, `planes_id`) VALUES ('$_SESSION[user_id]', '$_POST[idplan]')";
     $connection->query($queryinsert.$y);
     $ID = $connection->insert_id;
     if($ID)header("Location: perfil.php?id_user=".$_SESSION[user_id]);

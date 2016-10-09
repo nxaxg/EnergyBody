@@ -55,12 +55,11 @@ $plan = $relplan->fetch_assoc();
                     <nav class="col-lg-8 col-md-8">
                         <ul class="col-lg-2 col-md-3 col-lg-offset-10 col-md-offset-9 list-inline">
                             <li class="col-lg-4 col-md-4 text-center">
-                                <?php
-                                    if(!$_SESSION[user_id]){?>
-                                        <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                                <?php if(!$_SESSION[user_id]){?>
+                                        <span class="login-btn fa fa-user" title="Login"></span>
                                     <?php }else{?>
-                                        <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>"><span class="login-btn fa fa-universal-access" title="Mi perfil"></span></a>
-                                    <?php }?>
+                                        <span class="logged-btn fa fa-universal-access" title="Logged"></span>
+                                <?php }?>
                             </li>
                             <li class="col-lg-4 col-md-4 col-lg-offset-4 col-md-offset-4 text-center"><span class="menu-btn fa fa-navicon" title="Menú"></span></li>
                         </ul>
@@ -71,11 +70,10 @@ $plan = $relplan->fetch_assoc();
             <div class="header-cont hidden-lg hidden-md col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="col-sm-1 col-xs-2 text-center">
-                        <?php
-                            if(!$_SESSION[user_id]){?>
-                                <a href="login.php"><span class="login-btn fa fa-user" title="Login"></span></a>
+                        <?php if(!$_SESSION[user_id]){?>
+                                <span class="login-btn fa fa-user" title="Login"></span>
                             <?php }else{?>
-                                <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>"><span class="login-btn fa fa-universal-access" title="Mi perfil"></span></a>
+                                <span class="logged-btn fa fa-universal-access" title="Logged"></span>
                         <?php }?>
                     </div>
                     <!--logo-->
@@ -100,6 +98,28 @@ $plan = $relplan->fetch_assoc();
                 <div class="close-btn col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center"> <span class="fa fa-close"></span> </div>
             </div>
         </div>
+        <!--login logout-->
+        <div class="menu-login col-lg-12">
+            <div class="container-fluid">
+                <ul class="list-inline col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                    <li class="nav-option col-lg-2 col-md-2 col-sm-12 col-xs-12 text-center"><a href="login.php">Login</a></li>
+                    <li class="nav-option col-lg-2 col-md-2 col-sm-12 col-xs-12 text-center"><a href="registro.php">Registro</a></li>
+                    <input type="hidden" class="col-lg-10">
+                </ul>
+                <div class="close-btn col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center"> <span class="fa fa-close"></span> </div>
+            </div>
+        </div>
+        <div class="menu-logged col-lg-12">
+            <div class="container-fluid">
+                <ul class="list-inline col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                    <li class="nav-selected col-lg-2 col-md-2 col-sm-12 col-xs-12 text-center"><a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>">Mi perfil</a></li>
+                    <li class="nav-option col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center"><a href="logout.php">Cerrar sesión</a></li>
+                    <input type="hidden" class="col-lg-10">
+                </ul>
+                <div class="close-btn col-lg-1 col-md-1 col-sm-1 col-xs-1 text-center"> <span class="fa fa-close"></span> </div>
+            </div>
+        </div>
+        <!--/login logout-->
     </header>
     <section class="main-int">
         <div class="container-fluid">
@@ -127,11 +147,11 @@ $plan = $relplan->fetch_assoc();
                         <div class="row">
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <label for="rut">RUT:</label>
-                                <input type="text" class="form-control" name="rut" disabled value="<?php echo $user[rut]; ?>">
+                                <input type="text" class="form-control" name="rut" disabled oninput="checkRut(this)" value="<?php echo $user[rut]; ?>">
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <label for="email">E-Mail:</label>
-                                <input type="text" class="form-control" name="email" disabled value="<?php echo $user[email]; ?>">
+                                <input type="email" class="form-control" name="email" disabled value="<?php echo $user[email]; ?>">
                             </div>
                         </div>
                         <div class="row">
@@ -151,7 +171,7 @@ $plan = $relplan->fetch_assoc();
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <label for="valor">Valor plan:</label>
-                                <input type="text" class="form-control" name="valor" disabled value="<?php echo $plan[valor];?>">
+                                <input type="text" class="form-control" name="valor" disabled value="$<?php echo number_format($plan[valor], 0, ",", ".");?>">
                             </div>
                         </div>
                     </form>
@@ -175,6 +195,7 @@ $plan = $relplan->fetch_assoc();
     <!--scripts-->
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/rutValidator.js"></script>
     <script src="js/menu.js"></script>
 </body>
 

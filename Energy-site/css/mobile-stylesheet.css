@@ -32,19 +32,31 @@
         height: 680px;
     }
     
+    /*DD MEnu*/
+    
+    .dropdown-menu li a{
+        padding: 20px 10px;
+    }
+    
     .full-main figcaption{
         padding: 220px 0;
     }
     
-    .menu{
+    .menu,
+    .menu-login,
+    .menu-logged{
         height: 100vh;
     }
     
-    .menu li{
+    .menu li,
+    .menu-login li,
+    .menu-logged li{
         padding: 15px 0;
     }
     
-    .menu li a{
+    .menu li a,
+    .menu-login li a,
+    .menu-logged li a{
         font-size: 2em;
     }
     

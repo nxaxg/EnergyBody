@@ -11,6 +11,30 @@ $(document).ready(function(){
         });
     });
     
+    $(".menu-login").hide();
+    //menu
+    $(".login-btn").click(function(){
+        $('.menu-login').slideDown(400);
+        $(".close-btn").click(function(){
+            $(".menu-login").slideUp(400);
+        });
+        $('section').click(function(){
+            $(".menu-login").slideUp(400);
+        });
+    });
+    
+    $(".menu-logged").hide();
+    //menu
+    $(".logged-btn").click(function(){
+        $('.menu-logged').slideDown(400);
+        $(".close-btn").click(function(){
+            $(".menu-logged").slideUp(400);
+        });
+        $('section').click(function(){
+            $(".menu-logged").slideUp(400);
+        });
+    });
+    
     //slider icons
     $(".slider-group").sss({
         slideShow : false, // Set to false to prevent SSS from automatically animating.
@@ -35,7 +59,6 @@ $(document).ready(function(){
         speed : 5000, // Slideshow speed in milliseconds.
         showNav : true // Set to false to hide navigation arrows.
     });
-    
-    
+
     
 });

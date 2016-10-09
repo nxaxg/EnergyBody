@@ -16,6 +16,13 @@ textarea{
     resize: none;
 }
 
+input[name="nombre"],
+input[name="asunto"],
+input[name="sexo"]
+{
+    text-transform: capitalize;
+}
+
 /**HEADER**/
 
 header{
@@ -27,7 +34,6 @@ header{
     border-bottom: 1px solid #383838;
 }
 
-
 .logo{
     overflow: hidden;
 }
@@ -37,6 +43,7 @@ header{
 }
 
 header .login-btn,
+header .logged-btn,
 header .menu-btn{
     color: #CCFF40;
     margin-top: 14px;
@@ -45,6 +52,7 @@ header .menu-btn{
 }
 
 .login-btn,
+.logged-btn,
 .close-btn,
 .menu-btn,
 .nav-option{
@@ -55,6 +63,7 @@ header .menu-btn{
 
 .close-btn:hover,
 .login-btn:hover,
+.logged-btn:hover,
 .menu-btn:hover,
 .nav-option:hover{
     -webkit-transform: scale(1.2);
@@ -66,7 +75,9 @@ header .menu-btn{
 }
 
 /**MENU**/
-.menu{
+.menu,
+.menu-login,
+.menu-logged{
     position: absolute;
     width: 100%;
     height: 70px;
@@ -75,7 +86,9 @@ header .menu-btn{
     background-color: #CCFF40;
 }
 
-.menu a{
+.menu a,
+.menu-login a,
+.menu-logged a{
     color: rgba(33, 33, 33, 0.6);
     font-family: 'antonregular';
     text-transform: uppercase;
@@ -83,30 +96,70 @@ header .menu-btn{
 }
 
 
-.menu .nav-selected a{
+.menu .nav-selected a,
+.menu-login .nav-selected a,
+.menu-logged .nav-selected a{
     color: #212121;
     text-decoration: underline;
 }
 
-.menu .nav-option a:hover{
+.menu .nav-option a:hover,
+.menu-login .nav-option a:hover,
+.menu-logged .nav-option a:hover{
     color: #212121;
     transition: 0.4s;
 }
 
-.menu .close-btn{
+.menu .close-btn,
+.menu-login .close-btn,
+.menu-logged .close-btn{
     font-size: 1.5em;
     padding: 0;
     top: 0;
     cursor: pointer;
 }
 
-.menu li{
+.menu li,
+.menu-login li,
+.menu-logged li{
     padding: 10px 0 6px 0;
 }
 
-.menu .close-btn{
+.menu .close-btn,
+.menu-login .close-btn,
+.menu-logged .close-btn{
     padding: 5px 0;
 }
+
+/**DD menu**/
+    
+.dropdown-menu{
+    top: 67px;
+    border-radius: 0px;
+    background-color: #212121;
+    padding: 0;
+    transition: 0.5s;
+}
+
+.dropdown-menu li{
+    padding: 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+}
+
+.dropdown-menu li:last-child{
+    border-bottom: 0;
+}
+
+.dropdown-menu li a{
+    color: #CCFF40;
+    font-family: 'poppinslight';
+    padding: 10px;
+}
+
+.dropdown-menu li a:hover{
+    background-color: greenyellow;    
+}
+    
 
 /**MAIN**/
 
@@ -579,6 +632,8 @@ header .menu-btn{
     transition: 0.5s ease;
 }
 
+
+
 .btn-box .btn{
     border-radius: 0;
     padding: 10px 0;
@@ -603,8 +658,8 @@ header .menu-btn{
     margin-top: 20px;
     padding: 10px 0;
     font-family: 'poppinsmedium';
-    color: white;
-    background-color: rgba(69, 69, 69, 0.4);
+    color: #CCFF40;
+    border: 2px solid #CCFF40;
 }
 
 .form-mensaje.conf-mensaje{
