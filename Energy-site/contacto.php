@@ -2,7 +2,28 @@
 
 //Session started
 if(!isset($_SESSION))session_start();
+
 $asunto = $_GET[asunto];
+$error = false;
+
+if(isset($_POST[enviar]) && $_POST[enviar]="enviar"){
+    $user_contact = "nxayancanxg@gmail.com";
+    $asunto_contact = "Contacto desde Energy Body";
+    $mensaje_contact = "El usuario ". $_POST['nombre'] . " (" .$_POST['mail'] . ") desea contactarse:
+    Asunto: " . $_POST['asunto']."
+    Mensaje: " . $_POST['mensaje']."
+    
+    --Fin del mensaje-- ";
+    $cabecera_contact = "From: <contacto@energybody.cl>\n\r";
+
+    if(mail($user_contact, $asunto_contact, $mensaje_contact, $cabecera_contact)){
+        $msj = "Mensaje enviado con éxito <span class='fa fa-thumbs-o-up'><span/>";
+        $error = true;
+    }else{
+        $msj = "Error al intentar enviar mensaje <span class='fa fa-thumbs-o-down'><span/>";
+        $error = true;
+    }
+}
 
 ?>
 
@@ -125,41 +146,39 @@ $asunto = $_GET[asunto];
                     <p class="par-icon-cont col-lg-8 col-md-8 col-sm-8 col-xs-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 text-center">¿Tienes alguna pegunta? <br> ¡No dudes en contactarte con nosotros!</p>
                 </div>
                 <div class="row">
-                    <form action="#" class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
+                    <form method="post" class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
                         <?php if(!$_SESSION[user_id]){?>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                                <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <input type="email" class="form-control" placeholder="E-Mail" name="mail">
+                                <input type="email" class="form-control" placeholder="E-Mail" name="mail" required>
                             </div>
                         <?php }else{?>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $_SESSION[user_name]; ?>">
+                                <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?php echo $_SESSION[user_name]; ?>" required>
                             </div>
                             <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <input type="email" class="form-control" placeholder="E-Mail" name="mail" value="<?php echo $_SESSION[user_mail]; ?>">
+                                <input type="email" class="form-control" placeholder="E-Mail" name="mail" value="<?php echo $_SESSION[user_mail]; ?>" required>
                             </div>
                         <?php }?>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <input type="text" class="form-control" placeholder="Asunto" name="asunto" value="<?php echo $asunto;?>">
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <textarea placeholder="Mensaje" class="form-control" rows="3" name="mensaje"></textarea>
+                            <textarea placeholder="Mensaje" class="form-control" rows="3" name="mensaje" required></textarea>
                         </div>
                         <div class="form-group btn-box col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                            <button type="submit" class="btn btn-default col-lg-4 col-md-4 col-sm-6 col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-12">Enviar</button>
+                            <input type="submit" class="btn btn-default col-lg-4 col-md-4 col-sm-6 col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-12" name="enviar" value="enviar">
                         </div>
                     </form>
                 </div>
                 <div class="row">
-                    <?php 
-                        if($error){?>
+                    <?php if($error){?>
                             <div class="form-mensaje col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0 text-center">
-                             Mensaje
+                             <?php echo $msj; ?>
                             </div>
-                    <?php    }
-                    ?>
+                        <?php } ?>
                 </div>
         </div>
     </section>
