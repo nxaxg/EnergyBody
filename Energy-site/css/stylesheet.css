@@ -632,8 +632,6 @@ header .menu-btn{
     transition: 0.5s ease;
 }
 
-
-
 .btn-box .btn{
     border-radius: 0;
     padding: 10px 0;
@@ -644,8 +642,6 @@ header .menu-btn{
     font-size: 1.8em;
     text-transform: uppercase;
 }
-
-
 
 .btn-box .btn:hover{
     background-color: transparent;
@@ -664,6 +660,12 @@ header .menu-btn{
 
 .form-mensaje.conf-mensaje{
     color: #D8FF5A;
+}
+
+.dato-plan{
+    margin: 20px 0;
+    padding: 10px 0;
+    background-color: rgba(105, 105, 105, 0.31);
 }
 
 /**login**/
@@ -685,7 +687,7 @@ header .menu-btn{
 }
 
 .btn-box.btn-call{
-    padding: 40px 0;
+    padding: 40px 0 20px 0;
 }
 
 .btn-call .btn{

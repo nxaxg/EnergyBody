@@ -274,14 +274,14 @@ $resultado = $connection->query($query);
                                 </div>
                                 <div class="row">                            
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <label for="plan">Seleccione medio de pago:</label>
-                                        <select name="medio-pago" class="form-control" required>
+                                        <label for="mediopago">Seleccione medio de pago:</label>
+                                        <select name="mediopago" class="form-control" required>
                                             <option value="null" disabled selected>Medio de pago</option>
                                             <option value="Paypal">Paypal</option>
-                                            <option value="Webpay">Webpay</option>
-                                            <option value="Redcompra">Red Compra</option>
+                                            <option value="WebPay">WebPay</option>
+                                            <option value="Red Compra">Red Compra</option>
                                         </select>
-                                        <input type="text" name="idplan" value="<?php echo $plan[id_planes];?>">
+                                        <input type="hidden" name="idplan" value="<?php echo $plan[id_planes];?>">
                                     </div>
                                 </div>
                       </div>
@@ -299,7 +299,7 @@ $resultado = $connection->query($query);
 //agregar compra
 if(isset($_POST[comprar]) && $_POST[comprar]=="comprar"){
     $y = $y + 1;
-    $queryinsert.$y = "INSERT INTO `relacion` (`usuario_id`, `planes_id`) VALUES ('$_SESSION[user_id]', '$_POST[idplan]')";
+    $queryinsert.$y = "INSERT INTO `relacion` (`usuario_id`, `planes_id`, `medio_pago`) VALUES ('$_SESSION[user_id]', '$_POST[idplan]', '$_POST[mediopago]')";
     $connection->query($queryinsert.$y);
     $ID = $connection->insert_id;
     if($ID)header("Location: perfil.php?id_user=".$_SESSION[user_id]);

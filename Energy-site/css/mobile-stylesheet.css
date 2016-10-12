@@ -84,7 +84,7 @@
         height: 600px;
     }
     
-    .wrap{
+    /*.wrap{
         position: absolute;
         height: 100%;
         width: 100%;
@@ -99,7 +99,7 @@
         background-position: center;
         background-attachment: fixed;
         z-index: -1;
-    }
+    }*/
     
     .full-main figcaption{
         padding: 230px 0;
@@ -124,5 +124,9 @@
     #fullback .back-contact{
         font-size: 1em;
         border-width: 2px;
+    }
+    
+    .copyright{
+        text-align: center;
     }
 } 
