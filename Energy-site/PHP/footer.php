@@ -9,10 +9,10 @@
                     <a href="http://Twitter.com" target="_blank" title="Twitter" class="fa fa-twitter"></a>
                 </li>
                 <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
-                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="http://instagram.com" target="_blank" title="Instagram" class="fa fa-instagram"></a>
                 </li>
                 <li class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
-                    <a href="#" class="fa fa-youtube-play"></a>
+                    <a href="http://Youtube.com" target="_blank" title="Youtube" class="fa fa-youtube-play"></a>
                 </li>
             </ul>
         </div>
@@ -30,3 +30,10 @@
         </div>
     </div>
 </footer>
+
+<!--JQUery-->
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/rutValidator.js"></script>
+<script src="js/sss.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scriptor.js"></script>

@@ -68,7 +68,7 @@
 
 @media only screen and (max-width:768px){
     *{
-        font-size: 14px;
+        /*font-size: 14px;*/
     }
     
     header{
@@ -78,6 +78,16 @@
     header .logo img{
         width: 150px;
         padding: 10px 0;
+    }
+    
+    .header-cont .text-left{
+        padding-left: 0;
+        font-size: 1.6em;
+    }
+    
+    .header-cont .text-right{
+        padding-right: 0;
+        font-size: 1.6em;
     }
     
     #main .full-main{
@@ -101,8 +111,17 @@
         z-index: -1;
     }*/
     
+    #sucurslider>.container-fluid>.row,
+    #sucurslider .slider-group-sucursal,
+    #sucurslider .slider{
+        margin-left: 0;
+        padding-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+    }
+    
     .full-main figcaption{
-        padding: 230px 0;
+        padding: 200px 0;
     }
     
     .full-main .main-bajada{

@@ -338,7 +338,8 @@ header .menu-btn{
 }
 
 /*slider*/
-.slider-group, .slider{
+.slider-group,
+.slider{
     position: relative;
     overflow: hidden;
 }
@@ -435,7 +436,8 @@ header .menu-btn{
 .plan-desc{
     margin: 0;
     padding: 20px 0;
-    background-color: dimgray;
+    background-color: #484848;
+    color: rgba(255,255,255,0.5);
 }
 
 .plan-overlay{

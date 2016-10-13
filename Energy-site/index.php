@@ -4,35 +4,14 @@ if(!isset($_SESSION))session_start();
 
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
+<!--Header call-->
+<?php include('php/header.php') ?>
+<!--/Header call-->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="Sitio oficial de Energy Body Chile">
-    <meta name="keywords" content="energy, ems, justfit, gym, vida sana, wellness, salud, energía">
-    <meta name="robots" content="all">
-    <!--TITLE-->
-    <title>Energy Body Chile</title>
-    <!--bootstrap-->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!--site stylesheet-->
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <link rel="stylesheet" href="css/mobile-stylesheet.css">
-    <!--fuentes-->
-    <link rel="stylesheet" href="fonts/anton-poppins/stylesheet.css">
-    <!--font-awesome-->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!--favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
-</head>
 <body>
     <header>
-       <!--Header call-->
-       <?php include('php/header.php') ?>
-       <!--/Header call-->
-       
+      <?php include('php/nav.php');?>
+      
        <!--menú de navegación-->
         <div class="menu col-lg-12">
             <div class="container-fluid">
@@ -218,16 +197,16 @@ if(!isset($_SESSION))session_start();
             <div class="row">
                 <div class="convenios-grid col-lg-10 col-md-10 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
                     <figure class="convenio qn-icon col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img src="img/logo-opel.png" alt="Convenio Open">
+                        <img src="img/logo-opel.png" alt="Convenio Opel" title="Convenio Opel">
                     </figure>
                     <figure class="convenio qn-icon col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img src="img/logo-chev.png" alt="Convenio Chevrolet">
+                        <img src="img/logo-chev.png" alt="Convenio Chevrolet" title="Convenio Chevrolet">
                     </figure>
                     <figure class="convenio qn-icon col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img src="img/logo-colmena.png" alt="Convenio Colmena seguros">
+                        <img src="img/logo-colmena.png" alt="Convenio Colmena seguros" title="Convenio Colmena seguros">
                     </figure>
                     <figure class="convenio qn-icon col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                        <img src="img/logo-mutual.png" alt="Convenio Mutual de seguridad">
+                        <img src="img/logo-mutual.png" alt="Convenio Mutual de seguridad" title="Convenio Mutual de seguridad">
                     </figure>
                 </div>
             </div>
@@ -235,11 +214,6 @@ if(!isset($_SESSION))session_start();
     </section>
     
     <?php include('php/footer.php')?>
-    
-    <!--JQUery-->
-    <script src="js/jquery-1.11.3.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/menu.js"></script>
 </body>
 
 </html>

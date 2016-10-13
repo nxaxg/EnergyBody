@@ -28,34 +28,15 @@ if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password])
 
 ?>
 
-
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="Sitio oficial de Energy Body Chile">
-    <meta name="keywords" content="energy, ems, justfit, gym">
-    <meta name="robots" content="all">
-    <!--TITLE-->
-    <title>Login | Energy Body</title>
-    <!--bootstrap-->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!--site stylesheet-->
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <link rel="stylesheet" href="css/mobile-stylesheet.css">
-    <!--fuentes-->
-    <link rel="stylesheet" href="fonts/anton-poppins/stylesheet.css">
-    <!--font-awesome-->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"> </head>
+<!--Head call-->
+<?php include('php/header.php') ?>
+<!--/Head call-->
 
 <body>
     <header>
-        <!--Header call-->
-       <?php include('php/header.php') ?>
-       <!--/Header call-->
+        <!--Nav call-->
+       <?php include('php/nav.php') ?>
+       <!--/Nav call-->
         
         <!--menú de navegación-->
         <div class="menu col-lg-12">
@@ -178,11 +159,6 @@ if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password])
     </section>
     
     <?php include('php/footer.php');?>
-    
-    <!--scripts-->
-    <script src="js/jquery-1.11.3.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/menu.js"></script>
 </body>
 
 </html>
