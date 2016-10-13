@@ -218,11 +218,11 @@ $resultado = $connection->query($query);
                       <div class="modal-body form-login">
                               <div class="row">
                                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <label for="username">Nombre de usuario</label>                                        
-                                        <input type="text" class="form-control" name="username" disabled value="<?php echo $_SESSION[user_username];?>">
+                                        <label for="nombre">Nombre:</label>                                        
+                                        <input type="text" class="form-control" name="nombre" disabled value="<?php echo $_SESSION[user_name];?>">
                                     </div>
                                     <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <label for="email">E-Mail de usuario:</label>
+                                        <label for="email">E-Mail:</label>
                                         <input type="text" class="form-control" name="email" value="<?php echo $_SESSION[user_mail];?>" disabled>
                                     </div>
                                 </div>
