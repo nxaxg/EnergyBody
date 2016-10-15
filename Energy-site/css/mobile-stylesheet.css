@@ -4,12 +4,16 @@
         width: auto;
     }
     
+    header{
+        background-color: red;
+    }
+    
     #main .full-main{
         height: 700px;
     }
     
     .full-main figcaption{
-        padding: 250px 0;
+        padding: 220px 0;
     }
     
 }
@@ -20,7 +24,7 @@
     }
     
     header{
-        /*background-color: gray;*/
+        background-color: orange;
     }
     
     header .logo img{
@@ -33,7 +37,7 @@
     }
     
     .full-main figcaption{
-        padding: 220px 0;
+        padding: 200px 0;
     }
     
     .menu,
@@ -66,7 +70,7 @@
     }
     
     header{
-        /*background-color: dimgray;*/
+        background-color: yellow;
     }
     
     header .logo img{
@@ -86,30 +90,9 @@
         padding-top: 0;
     }
     
-    header{
-        
-    }
-    
     #main .full-main{
         height: 600px;
     }
-    
-    /*.wrap{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        background-image: url(../img/main-photo-small.jpg);
-        -moz-background-size: cover;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-        z-index: -1;
-    }*/
     
     #sucurslider>.container-fluid>.row,
     #sucurslider .slider-group-sucursal,
@@ -121,7 +104,7 @@
     }
     
     .full-main figcaption{
-        padding: 200px 0;
+        padding: 200px 0 230px 0;
     }
     
     .full-main .main-bajada{

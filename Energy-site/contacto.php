@@ -115,21 +115,12 @@ if(isset($_POST[enviar]) && $_POST[enviar]="enviar"){
                 </div>
                 <div class="row">
                     <form method="post" class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">
-                        <?php if(!$_SESSION[user_id]){?>
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre" required>
-                            </div>
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <input type="email" class="form-control" placeholder="E-Mail" name="mail" id="mail" required>
-                            </div>
-                        <?php }else{?>
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre"  value="<?php echo $_SESSION[user_name]; ?>" required>
-                            </div>
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <input type="email" class="form-control" placeholder="E-Mail" name="mail" id="mail" value="<?php echo $_SESSION[user_mail]; ?>" required>
-                            </div>
-                        <?php }?>
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" class="form-control" placeholder="Nombre" name="nombre" id="nombre"  value="<?php echo $_SESSION[user_name]; ?>" required>
+                        </div>
+                        <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <input type="email" class="form-control" placeholder="E-Mail" name="mail" id="mail" value="<?php echo $_SESSION[user_mail]; ?>" required>
+                        </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <input type="text" class="form-control" placeholder="Asunto" name="asunto" id="asunto" value="<?php echo $asunto;?>">
                         </div>
@@ -137,7 +128,7 @@ if(isset($_POST[enviar]) && $_POST[enviar]="enviar"){
                             <textarea placeholder="Mensaje" class="form-control" rows="3" name="mensaje" id="mensaje" required></textarea>
                         </div>
                         <div class="form-group btn-box col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                            <input type="submit" class="btn btn-default col-lg-4 col-md-4 col-sm-6 col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-12" title="Enviar formulario" name="enviar" value="enviar">
+                            <input type="submit" class="btn col-lg-4 col-md-4 col-sm-6 col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-12" title="Enviar formulario" name="enviar" value="enviar">
                         </div>
                     </form>
                 </div>

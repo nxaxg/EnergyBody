@@ -215,7 +215,7 @@ if(!isset($_SESSION))session_start();
             </div>
             <div class="row">
                 <a href="contacto.php?asunto=Franquicia">
-                    <p class="back-contact col-lg-6 col-md-6 col-sm-8 col-xs-10 col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-xs-offset-1" title="Contacto con Franquicias">franquicias@energybody.cl</p>
+                    <p class="back-contact col-lg-6 col-md-6 col-sm-8 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-xs-offset-0" title="Contacto con Franquicias">franquicias@energybody.cl</p>
                 </a>
             </div>
         </div>

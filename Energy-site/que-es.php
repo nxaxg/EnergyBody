@@ -102,7 +102,7 @@ if(!isset($_SESSION))session_start();
                             <figcaption class="col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-ofset-0">
                                 <h3 class="qn-title">El traje</h3>
                             </figcaption>
-                            <p class="par-icon col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1 col-xs-offset-0">Es un traje tecnológico, duradero y transpirable que integra unos electrodos textiles fácilmente intercambiables y lavables. No es sólo una manera flexible de llevar una innovadora tecnología en nuestro cuerpo, es también poderosa.</p>
+                            <p class="par-icon col-lg-10 col-md-10 col-sm-10 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-0">Es un traje tecnológico, duradero y transpirable que integra unos electrodos textiles fácilmente intercambiables y lavables. No es sólo una manera flexible de llevar una innovadora tecnología en nuestro cuerpo, es también poderosa.</p>
                         </figure>
                     </div>
                     <!--slider 2-->
@@ -122,7 +122,7 @@ if(!isset($_SESSION))session_start();
                             <figcaption>
                                 <h3 class="qn-title">Tablet</h3>
                             </figcaption>
-                            <p class="par-icon col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1 col-xs-offset-0">Queremos ser todo lo ágiles que sea posible para proveer a nuestros consumidores de una completa libertad de movimientos, eso es por lo que hemos desarrollado y lanzado nuestra propia aplicación de Android y iOS para tablet desde las cuales funciona todo el sistema online.</p>
+                            <p class="par-icon col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1 col-xs-offset-0">Queremos ser todo lo ágiles que sea posible para proveer a nuestros consumidores de una completa libertad de movimientos, es por eso que hemos desarrollado y lanzado nuestra propia aplicación de Android y iOS para tablet desde las cuales funciona todo el sistema online.</p>
                         </figure>
                     </div>
                     <!--slider 4-->
@@ -132,7 +132,7 @@ if(!isset($_SESSION))session_start();
                             <figcaption>
                                 <h3 class="qn-title">Cerebro</h3>
                             </figcaption>
-                            <p class="par-icon col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1 col-xs-offset-0">Multiplayer es un sistema de entrenamiento donde cinco personas pueden ser entrenadas al mismo tiempo independientemente de sus características tales como edad, fisionomía o forma física. Esto solo es posible con la tecnología Justfit.</p>
+                            <p class="par-icon col-lg-8 col-md-8 col-sm-10 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-1 col-xs-offset-0">Multiplayer es un sistema de entrenamiento donde cinco personas pueden ser entrenadas al mismo tiempo, independientemente de sus características tales como edad, fisionomía o forma física. Esto solo es posible con la tecnología Justfit.</p>
                         </figure>
                     </div>
                </div>

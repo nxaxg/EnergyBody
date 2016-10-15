@@ -3724,8 +3724,8 @@ fieldset[disabled] a.btn {
 
 .btn-default {
     color: #333;
-    background-color: #fff;
-    border-color: #ccc
+    /*background-color: #fff;
+    border-color: #ccc*/
 }
 
 .btn-default.focus,
@@ -3736,13 +3736,13 @@ fieldset[disabled] a.btn {
 }
 
 .btn-default:hover {
-    color: #333;
+    /*color: #333;
     background-color: #e6e6e6;
-    border-color: #adadad
+    border-color: #adadad*/
 }
 
-.btn-default.active,
-.btn-default:active,
+/*.btn-default.active,
+.btn-default:active,*/
 .open>.dropdown-toggle.btn-default {
     color: #333;
     background-color: #e6e6e6;
