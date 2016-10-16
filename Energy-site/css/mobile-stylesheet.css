@@ -4,10 +4,6 @@
         width: auto;
     }
     
-    header{
-        background-color: red;
-    }
-    
     #main .full-main{
         height: 700px;
     }
@@ -23,10 +19,6 @@
         font-size: 15px;
     }
     
-    header{
-        background-color: orange;
-    }
-    
     header .logo img{
         width: 150px;
         padding: 10px 0;
@@ -37,7 +29,7 @@
     }
     
     .full-main figcaption{
-        padding: 200px 0;
+        padding: 200px 0 250px 0;
     }
     
     .menu,
@@ -65,12 +57,16 @@
 } 
 
 @media only screen and (max-width:768px){
-    *{
-        /*font-size: 14px;*/
-    }
-    
-    header{
-        background-color: yellow;
+    .wrap{
+        -moz-background-size: cover 100%;
+        -webkit-background-size: cover 100%;
+        -moz-background-attachment: fixed;
+        -webkit-background-attachment: fixed;
+        background-size: cover 100%;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        z-index: -1;
     }
     
     header .logo img{
@@ -103,6 +99,20 @@
         padding-right: 0;
     }
     
+    .plan-content,
+    .plan,
+    .plan-overlay,
+    .plan-overlay .row{
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .plan .plan-overlay{
+        width: 100%;
+    }
+    
     .full-main figcaption{
         padding: 200px 0 230px 0;
     }
@@ -127,12 +137,20 @@
         padding: 5px 0;
     }
     
-    .plan-overlay{
-        width: 91%;
-    }
-    
     #fullback .back-title{
         padding-bottom: 20px;    
+    }
+    
+    .modal-footer{
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    
+    .modal-footer .btn{
+        margin: 10px 10px;
     }
     
     #fullback .back-contact{

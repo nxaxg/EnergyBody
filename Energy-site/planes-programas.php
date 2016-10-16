@@ -174,7 +174,7 @@ $resultado = $connection->query($query);
                             <p class="par-icon">Sólo puedes realizar una compra de plan por usuario <span class="fa fa-thumbs-o-down"></span></p>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-default btn-close-modal" data-dismiss="modal">Cerrar ventana</button>
+                            <button type="button" class="btn btn-close-modal" data-dismiss="modal">Cerrar ventana</button>
                               <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>">
                                   <button class="btn btn-primary btn-comprar-modal">Ir a perfil</button>
                               </a>
@@ -196,7 +196,7 @@ $resultado = $connection->query($query);
                             <p class="par-icon">Necesitas estar registrado para poder realizar una compra. <span class="fa fa-smile-o"></span></p>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-default btn-close-modal" data-dismiss="modal">Cerrar ventana</button>
+                            <button type="button" class="btn btn-close-modal" data-dismiss="modal">Cerrar ventana</button>
                               <a href="login.php">
                                   <button class="btn btn-primary btn-comprar-modal">Iniciar sesión</button>
                               </a>
@@ -256,7 +256,7 @@ $resultado = $connection->query($query);
                                 </div>
                       </div>
                       <div class="modal-footer text-center">
-                            <button type="button" class="btn btn-default btn-close-modal" data-dismiss="modal">Cerrar ventana</button>
+                            <button type="button" class="btn btn-close-modal" data-dismiss="modal">Cerrar ventana</button>
                             <input type="submit" name="comprar" class="btn btn-primary btn-comprar-modal" value="comprar">
                       </div>
                       </form>

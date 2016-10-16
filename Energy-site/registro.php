@@ -140,7 +140,7 @@ if(isset($_POST[registrar]) && $_POST[registrar]=="registrar"){
                         </div>
                         <div class="row">
                             <div class="form-group btn-box col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                                <input type="submit" class="btn btn-default col-lg-6 col-md-8 col-sm-8 col-xs-10 col-lg-offset-3 col-md-offset-2 col-sm-offset-2 col-xs-offset-1" name="registrar" value="registrar">
+                                <input type="submit" class="btn col-lg-6 col-md-8 col-sm-8 col-xs-10 col-lg-offset-3 col-md-offset-2 col-sm-offset-2 col-xs-offset-1" name="registrar" value="registrar">
                             </div>
                         </div>
                     </form>

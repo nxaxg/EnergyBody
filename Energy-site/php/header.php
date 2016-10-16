@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Sitio oficial de Energy Body Chile">
     <meta name="keywords" content="energy, ems, justfit, gym, vida sana, wellness, salud, energía">
     <meta name="robots" content="all">

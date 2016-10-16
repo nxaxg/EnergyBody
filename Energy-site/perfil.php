@@ -163,7 +163,7 @@ $plan = $relplan->fetch_assoc();
                     <div class="row">
                             <div class="form-group btn-box col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                                 <a href="logout.php">
-                                    <button class="btn btn-default col-lg-4 col-md-4 col-sm-6 col-xs-10 col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-offset-1" name="ingresar" title="Cerrar sesión">Cerrar sesión</button>
+                                    <button class="btn col-lg-4 col-md-4 col-sm-6 col-xs-10 col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-offset-1" name="ingresar" title="Cerrar sesión">Cerrar sesión</button>
                                 </a>
                             </div>
                         </div>

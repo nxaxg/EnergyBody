@@ -126,7 +126,7 @@ if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password])
                             <input type="password" class="form-control" placeholder="Contraseña" name="password" id="password">
                         </div>
                         <div class="form-group btn-box col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                            <button type="submit" class="btn btn-default col-lg-8 col-md-10 col-sm-10 col-xs-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" name="ingresar" title="Inicio sesión">Iniciar sesión</button>
+                            <button type="submit" class="btn col-lg-8 col-md-10 col-sm-10 col-xs-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" name="ingresar" title="Inicio sesión">Iniciar sesión</button>
                         </div>
                     </form>
                     <!--/formulario-->
@@ -151,7 +151,7 @@ if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password])
             <div class="row">
                 <div class="btn-box btn-call col-lg-4 col-md-6 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-3 col-sm-offset-2 col-xs-offset-0">
                     <a href="registro.php">
-                        <button class="btn btn-default col-lg-8 col-md-10 col-sm-10 col-xs-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" title="Ir a formulario de registro">Registrar</button>
+                        <button class="btn col-lg-8 col-md-10 col-sm-10 col-xs-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" title="Ir a formulario de registro">Registrar</button>
                     </a>
                 </div>
             </div>

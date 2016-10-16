@@ -128,7 +128,7 @@ if(isset($_POST[enviar]) && $_POST[enviar]="enviar"){
                             <textarea placeholder="Mensaje" class="form-control" rows="3" name="mensaje" id="mensaje" required></textarea>
                         </div>
                         <div class="form-group btn-box col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                            <input type="submit" class="btn col-lg-4 col-md-4 col-sm-6 col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-12" title="Enviar formulario" name="enviar" value="enviar">
+                            <input type="submit" class="btn col-lg-4 col-md-4 col-sm-6 col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-10 col-xs-offset-1" title="Enviar formulario" name="enviar" value="enviar">
                         </div>
                     </form>
                 </div>
