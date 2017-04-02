@@ -1,5 +1,6 @@
 <?php require_once('php/connection.php');
-
+global $title;
+$title = 'Quiénes somos';
 if(!isset($_SESSION))session_start();
 
 ?>
@@ -141,6 +142,6 @@ if(!isset($_SESSION))session_start();
         </div>
     </section>
     
-    <?php include('php/footer.php')?>
+    <?php include('php/footer.php');?>
 </body>
 </html>

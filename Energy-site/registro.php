@@ -1,18 +1,19 @@
 <?php require_once('php/connection.php');
-
+global $title;
+$title = 'Registro de usuario';
 if(!isset($_SESSION))session_start();
 
 if(isset($_POST[registrar]) && $_POST[registrar]=="registrar"){
-    $queryask = "select `rut`,`email`,`username` from `usuarios` where `rut`='$_POST[rut]' or `email`='$_POST[email]' or `username`='$_POST[username]'";
+    $queryask = "select `rut`,`email`,`username` from `energydb_personas` where `rut`='$_POST[rut]' or `email`='$_POST[email]' or `username`='$_POST[username]'";
     $relask = $connection->query($queryask);
     $usexist = $relask->fetch_assoc();
     if($usexist){
         $error = true;
     }else{
-        $queryinsert = "INSERT INTO `usuarios` (`nombre`, `rut`, `email`, `edad`, `sexo`, `username`, `password`) VALUES ('$_POST[nombre]', '$_POST[rut]', '$_POST[email]', '$_POST[edad]', '$_POST[sexo]', '$_POST[username]', '$_POST[password]')";
+        $queryinsert = "INSERT INTO `energydb_personas` (`nombre`, `rut`, `email`, `edad`, `sexo`, `username`, `password`) VALUES ('$_POST[nombre]', '$_POST[rut]', '$_POST[email]', '$_POST[edad]', '$_POST[sexo]', '$_POST[username]', '$_POST[password]')";
         $connection->query($queryinsert);
          $ID = $connection->insert_id;
-        if($ID)header("Location: login.php?reg=".$_POST[username]);
+        if($ID)header("Location: login.php");
     }
 }
 ?>
@@ -155,7 +156,7 @@ if(isset($_POST[registrar]) && $_POST[registrar]=="registrar"){
         </div>
     </section>
     
-    <?php include('php/footer.php')?>
+    <?php include('php/footer.php');?>
 </body>
 
 </html>

@@ -1,31 +1,30 @@
 <?php require_once('php/connection.php');
-
-
+global $title;
+$title = 'Mi perfil';
 //consulta si sesión ya está iniciada
 if(!isset($_SESSION))session_start();
     
-$querysel = "select * from `usuarios` where `id_usuarios`='$_GET[id_user]'";
+$querysel = "select * from `energydb_personas` where `id_personas`='$_GET[id_user]'";
 $resultadosel = $connection->query($querysel);
 $user = $resultadosel->fetch_assoc();
 
-$selectrel = "select * from `relacion` where `usuario_id`='$_GET[id_user]'";
+$selectrel = "select * from `energydb_relacion` where `usuario_id`='$_GET[id_user]'";
 $resrel = $connection->query($selectrel);
 $rel = $resrel->fetch_assoc();
 
-$selecplan = "select * from `planes` where `id_planes`='$rel[planes_id]'";
+$selecplan = "select * from `energydb_planes` where `id_planes`='$rel[planes_id]'";
 $relplan = $connection->query($selecplan);
 $plan = $relplan->fetch_assoc();
-
 ?>
 
 <!--Head call-->
-<?php include('php/header.php') ?>
+<?php include('php/header.php'); ?>
 <!--/Head call-->
 
 <body>
     <header>
         <!--Nav call-->
-       <?php include('php/nav.php') ?>
+       <?php include('php/nav.php'); ?>
        <!--/Nav call-->
        
         <!--menú de navegación-->
@@ -172,7 +171,7 @@ $plan = $relplan->fetch_assoc();
         </div>
     </section>
     
-    <?php include('php/footer.php')?>
+    <?php include('php/footer.php');?>
 </body>
 
 </html>

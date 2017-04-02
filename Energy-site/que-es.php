@@ -1,10 +1,8 @@
 <?php require_once('php/connection.php');
-
+global $title;
+$title = '¿Qué es?';
 if(!isset($_SESSION))session_start();
-
 ?>
-
-
 <!--Head call-->
 <?php include('php/header.php') ?>
 <!--/Head call-->
@@ -184,6 +182,6 @@ if(!isset($_SESSION))session_start();
         </div>
     </section>
     
-    <?php include('php/footer.php')?>
+    <?php include('php/footer.php');?>
 </body>
 </html>

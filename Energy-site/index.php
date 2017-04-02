@@ -1,9 +1,6 @@
 <?php require_once('php/connection.php');
-
 if(!isset($_SESSION))session_start();
-
 ?>
-
 <!--Header call-->
 <?php include('php/header.php') ?>
 <!--/Header call-->

@@ -10,7 +10,7 @@
             <nav class="col-lg-8 col-md-8">
                 <ul class="col-lg-2 col-md-3 col-lg-offset-10 col-md-offset-9 list-inline">
                     <li class="col-lg-4 col-md-4 text-center">
-                        <?php if(!$_SESSION[user_id]){?> <span class="login-btn fa fa-user" title="Inicia sesión"></span>
+                        <?php if(!$_SESSION['user_id']){?> <span class="login-btn fa fa-user" title="Inicia sesión"></span>
                             <?php }else{?> <span class="logged-btn fa fa-universal-access" "Sesión iniciada"></span>
                                 <?php }?>
                     </li>

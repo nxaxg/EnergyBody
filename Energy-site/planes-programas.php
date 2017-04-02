@@ -1,10 +1,11 @@
 <?php require_once('php/connection.php');
-
+global $title;
+$title = 'Planes y programas';
 //Session started
 if(!isset($_SESSION))session_start();
 
 //select planes
-$query = "select * from `planes` order by `id_planes` asc";
+$query = "select * from `energydb_planes` order by `id_planes` asc";
 $resultado = $connection->query($query);
 
 ?>
@@ -100,7 +101,7 @@ $resultado = $connection->query($query);
                 </div>
                 <div class="planes-cont">
                   <?php   
-                    $queryexist = "select * from `relacion` where `relacion`.`usuario_id`='$_SESSION[user_id]'";
+                    $queryexist = "select * from `energydb_relacion` where `energydb_relacion`.`usuario_id`='$_SESSION[user_id]'";
                     $resulexist = $connection->query($queryexist);
                     $exist = $resulexist->fetch_assoc();
                     ?>
@@ -269,7 +270,7 @@ $resultado = $connection->query($query);
 //agregar compra
 if(isset($_POST[comprar]) && $_POST[comprar]=="comprar"){
     $y = $y + 1;
-    $queryinsert.$y = "INSERT INTO `relacion` (`usuario_id`, `planes_id`, `medio_pago`) VALUES ('$_SESSION[user_id]', '$_POST[idplan]', '$_POST[mediopago]')";
+    $queryinsert.$y = "INSERT INTO `energydb_relacion` (`usuario_id`, `planes_id`, `medio_pago`) VALUES ('$_SESSION[user_id]', '$_POST[idplan]', '$_POST[mediopago]')";
     $connection->query($queryinsert.$y);
     $ID = $connection->insert_id;
     if($ID)header("Location: perfil.php?id_user=".$_SESSION[user_id]);
@@ -299,7 +300,7 @@ if(isset($_POST[comprar]) && $_POST[comprar]=="comprar"){
     
     <?php include('php/sucurslider.php');?>
 
-    <?php include('php/footer.php')?>
+    <?php include('php/footer.php');?>
 
 <!--JQUery-->
 </body>

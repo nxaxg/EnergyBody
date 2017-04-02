@@ -1,31 +1,29 @@
 <?php require_once('php/connection.php');
-
+global $title;
+$title = 'Iniciar sesión';
 $new_user = $_GET[reg];
-
 //consulta si sesión ya está iniciada
 if(!isset($_SESSION))session_start();
-
-if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password]) && $_POST[password]<>"")){
-    $query="SELECT * FROM usuarios where username='$_POST[username]' AND password='$_POST[password]'";
-    $resultado=$connection->query($query);
-    
-    if($total = $resultado->num_rows){
+if((isset($_POST['username']) && $_POST['username']<>"") && (isset($_POST['password']) && $_POST['password']<>"")){
+    $query = "select * from `energydb_personas` where `username` like '$_POST[username]' and `password`= '$_POST[password]'";
+    $resultado = $connection->query($query);
+    // echo $query;
+    // exit;
+    if($resultado){
          $usuario = $resultado->fetch_assoc();
-            
-         $_SESSION[user_id]=$usuario[id_usuarios];
-         $_SESSION[user_name]=$usuario[nombre];
-         $_SESSION[user_mail]=$usuario[email];
-         $_SESSION[user_edad]=$usuario[edad];
-         $_SESSION[user_sexo]=$usuario[sexo];
-         $_SESSION[user_username]=$usuario[username];
-         $_SESSION[user_password]=$usuario[password];
+         $_SESSION['user_id']=$usuario['id_personas'];
+         $_SESSION['user_name']=$usuario['nombre'];
+         $_SESSION['user_mail']=$usuario['email'];
+         $_SESSION['user_edad']=$usuario['edad'];
+         $_SESSION['user_sexo']=$usuario['sexo'];
+         $_SESSION['user_username']=$usuario['username'];
+         $_SESSION['user_password']=$usuario['password'];
          $volver=($_SESSION[volver])?$_SESSION[volver]:"perfil.php";
          header("Location: ".$volver."?id_user=".$_SESSION[user_id]);
     }else {
-     $error="Usuario/Clave no registrados";
+        $error="Usuario/Clave no registrados";
     }
 }
-
 ?>
 
 <!--Head call-->
@@ -87,7 +85,7 @@ if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password])
             <div class="container-fluid">
                 <ul class="list-inline col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                     <li class="nav-option col-lg-2 col-md-2 col-sm-12 col-xs-12 text-center">
-                        <a href="perfil.php?id_user=<?php echo $_SESSION[user_id]?>" title="Visita tu perfil">Mi perfil</a>
+                        <a href="perfil.php?id_user=<?php echo $_SESSION['user_id'];?>" title="Visita tu perfil">Mi perfil</a>
                     </li>
                     <li class="nav-option col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
                         <a href="logout.php" title="Cerrar sesión">Cerrar sesión</a>
@@ -118,12 +116,12 @@ if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password])
             <div class="row">
                 <div class="row">
                    <!--formulario-->
-                    <form method="post" class="form-login col-lg-4 col-md-6 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-3 col-sm-offset-2 col-xs-offset-0">
+                    <form action="" method="post" class="form-login col-lg-4 col-md-6 col-sm-8 col-xs-12 col-lg-offset-4 col-md-offset-3 col-sm-offset-2 col-xs-offset-0">
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <input type="text" class="form-control" placeholder="Nombre de usuario" name="username" id="username" value="<?php echo $new_user?>">
+                            <input type="text" class="form-control" placeholder="Nombre de usuario" name="username" id="usernamedb">
                         </div>
                         <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <input type="password" class="form-control" placeholder="Contraseña" name="password" id="password">
+                            <input type="password" class="form-control" placeholder="Contraseña" name="password" id="passworddb">
                         </div>
                         <div class="form-group btn-box col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
                             <button type="submit" class="btn col-lg-8 col-md-10 col-sm-10 col-xs-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 col-xs-offset-1" name="ingresar" title="Inicio sesión">Iniciar sesión</button>
@@ -134,7 +132,7 @@ if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password])
                 <?php if($error){?>
                     <div class="row">
                         <div class="form-mensaje col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0 text-center">
-                            <?php echo $error ?>
+                            <?php echo $error; ?>
                         </div>
                     </div>
                 <?php } ?>
@@ -160,5 +158,4 @@ if((isset($_POST[username]) && $_POST[username]<>"") && (isset($_POST[password])
     
     <?php include('php/footer.php');?>
 </body>
-
 </html>

@@ -1,5 +1,6 @@
 <?php require_once('php/connection.php');
-
+global $title;
+$title = 'Franquicia';
 //Session started
 if(!isset($_SESSION))session_start();
 

@@ -1,5 +1,6 @@
 <?php require('php/connection.php');
-
+global $title;
+$title = 'Contacto';
 //Session started
 if(!isset($_SESSION))session_start();
 
@@ -142,7 +143,9 @@ if(isset($_POST[enviar]) && $_POST[enviar]="enviar"){
         </div>
     </section>
     
-    <?php include('php/sucurslider.php');
-          include('php/footer.php');?>
+    <?php
+    include('php/sucurslider.php');
+    include('php/footer.php');
+    ?>
 </body>
 </html>

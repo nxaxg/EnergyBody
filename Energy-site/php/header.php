@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-
+<?php if($title) $title = ' | '.$title; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
     <meta name="keywords" content="energy, ems, justfit, gym, vida sana, wellness, salud, energía">
     <meta name="robots" content="all">
     <!--TITLE-->
-    <title>Energy Body Chile</title>
+    <title>Energy Body<?php echo $title; ?></title>
     <!--bootstrap-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/sss.css">
